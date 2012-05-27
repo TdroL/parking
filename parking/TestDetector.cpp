@@ -4,7 +4,7 @@
 
 TestDetector::TestDetector()
 {
-
+	testIsPointInside();
 }
 
 void TestDetector::testIsPointInside()

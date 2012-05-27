@@ -3,7 +3,7 @@
 #include <algorithm>
 
 Detector::Detector()
-	: spots(nullptr), spots_length(0) 
+	: spots(nullptr), spots_length(0)
 {}
 
 Detector::~Detector()
@@ -47,12 +47,12 @@ unsigned int Detector::findFreeSpots(double threshold)
 	for (size_t i = 0; i < spots_length; i++)
 	{
 		Spot &spot = spots[i];
-		
+
 		if (spot.status == Blocked)
 		{
 			continue;
 		}
-		
+
 		CountStats const &stats = countPoints(i);
 
 		double factor = (double) stats.count / (double) stats.scanned;
@@ -91,6 +91,7 @@ CountStats Detector::countPoints(size_t index)
 
 	auto isPointInside = [&corners, &sgn] (unsigned int x, unsigned int y) -> bool
 	{
+		// http://local.wasp.uwa.edu.au/~pbourke/geometry/insidepoly/
 		int last_side = 0;
 
 		for (size_t i = 0; i < 4; i++)
@@ -146,7 +147,7 @@ void Detector::displayGrid()
 {
 	cv::Mat dst;
 	cvtColor(img, dst, CV_GRAY2RGB);
-	
+
 	cv::Scalar color_free(0, 255, 0);
 	cv::Scalar color_occupied(255, 0, 0);
 	cv::Scalar color_blocked(0, 0, 255);
