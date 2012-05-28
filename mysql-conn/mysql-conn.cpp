@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include <string>
-#include <sstream>
+#include <vector>
 #include <boost/thread/thread.hpp>
 #ifdef _WIN32
 	#pragma warning (disable : 4251)
@@ -35,7 +35,7 @@ using namespace sql;
 
 int main(int argc, _TCHAR* argv[])
 {
-	string dns = "tcp://127.0.0.1:3307";
+	string dns = "tcp://127.0.0.1:3306";
 	SQLString username = "root";
 	SQLString password = "";
 	SQLString schema = "parking";
@@ -45,7 +45,8 @@ int main(int argc, _TCHAR* argv[])
 	unique_ptr<Connection> con;
 	unique_ptr<Statement> stmt;
 	unique_ptr<ResultSet> res;
-	unique_ptr<PreparedStatement> pstmt;
+	unique_ptr<PreparedStatement> stat_camera;
+	unique_ptr<PreparedStatement> stat_spot;
 
 	try
 	{
@@ -60,20 +61,67 @@ int main(int argc, _TCHAR* argv[])
 
 		stmt.reset(con->createStatement());
 
-		pstmt.reset(con->prepareStatement("SELECT id, adres, typ FROM parking ORDER BY last_check ASC LIMIT 1"));
+		stat_camera.reset(con->prepareStatement("SELECT id, address, type, threshold_high, threshold_low, threshold_scan FROM camera ORDER BY last_scan ASC LIMIT 1"));
 
 		for(;;)
 		{
-			res.reset(pstmt->executeQuery());
+			res.reset(stat_camera->executeQuery());
 
 			if ( ! res->first())
 			{
 				printf("No data, skipping.\n");
 				boost::this_thread::sleep(noRowsDelay);
+				continue;
 			}
 
+			printf("Scanning [id: %u]\n", res->getInt("id"));
+			
+			string address = res->getString("address");
+			string type = res->getString("type");
+
+			stat_spot.reset(con->prepareStatement("SELECT id, p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y FROM spot WHERE camera_id = ?"));
+			stat_spot->setInt(1, res->getInt("id"));
+
+			res.reset(stat_spot->executeQuery());
+
+			struct Point
+			{
+				unsigned int x, y;
+			};
+
+			struct Spot
+			{
+				unsigned int id;
+				Point p1;
+				Point p2;
+				Point p3;
+				Point p4;
+			};
+
+			vector<Spot *> spots;
+
 			while (res->next())
-			printf("\t... MySQL counts: %u\n", res->getInt("id"));
+			{
+				Spot *spot = new Spot;
+				spot->id = res->getInt("id");
+				spot->p1.x = res->getInt("p1x");
+				spot->p1.y = res->getInt("p1y");
+				spot->p2.x = res->getInt("p2x");
+				spot->p2.y = res->getInt("p2y");
+				spot->p3.x = res->getInt("p3x");
+				spot->p3.y = res->getInt("p3y");
+				spot->p4.x = res->getInt("p4x");
+				spot->p4.y = res->getInt("p4y");
+
+				spots.push_back(spot);
+			}
+
+			printf("Loaded %u spots\n", spots.size());
+
+			for each (Spot *spot in spots)
+			{
+				delete spot;
+			}
 		}
 	}
 	catch (SQLException &e)

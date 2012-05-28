@@ -55,7 +55,7 @@ int main(int argc, _TCHAR* argv[])
 	TestClass tests;
 	tests.run();
 	system("pause");
-	return EXIT_SUCCESS;
+	//return EXIT_SUCCESS;
 #endif
 
 	string camera_address = "C:/Users/tdroL/Documents/Visual Studio 2010/Projects/parking/assets/preview1.jpg";

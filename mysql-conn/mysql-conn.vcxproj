@@ -54,7 +54,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\tdrol\lib\mysql-connector-c++1.1.0\lib\opt</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\tdroL\lib\boost\boost_1_49_0\stage\lib;C:\Users\tdrol\lib\mysql-connector-c++1.1.0\lib\opt</AdditionalLibraryDirectories>
       <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -73,7 +73,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\tdrol\lib\mysql-connector-c++1.1.0\lib\opt</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\tdroL\lib\boost\boost_1_49_0\stage\lib;C:\Users\tdrol\lib\mysql-connector-c++1.1.0\lib\opt</AdditionalLibraryDirectories>
       <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

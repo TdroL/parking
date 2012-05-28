@@ -14,7 +14,7 @@ Detector::~Detector()
 	}
 }
 
-bool Detector::loadImage(std::string const &path, double threshold1, double threshold2)
+bool Detector::loadImage(std::string const &path, double threshold_high, double threshold_low)
 {
 	// img.deallocate();
 	cv::Mat src = cv::imread(path, 0);
@@ -24,7 +24,7 @@ bool Detector::loadImage(std::string const &path, double threshold1, double thre
 		return false;
 	}
 
-	Canny(src, img, threshold1, threshold2);
+	Canny(src, img, threshold_high, threshold_low);
 
 	return (img.data != nullptr);
 }

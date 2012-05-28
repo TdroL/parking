@@ -30,7 +30,7 @@ class Detector
 public:
 	Detector();
 	~Detector();
-	bool loadImage(std::string const &path, double threshold1 = 100.0, double threshold2 = 3.0);
+	bool loadImage(std::string const &path, double threshold_high = 100.0, double threshold_low = 3.0);
 	void loadSpots(Spot *spots, size_t spots_length);
 	unsigned int findFreeSpots(double threshold = 0.125);
 	CountStats countPoints(size_t index);
