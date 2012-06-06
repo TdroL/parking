@@ -26,3 +26,13 @@ CameraDriver * CameraDriver::factory(const char *type, std::string const &addres
 {
 	return CameraDriver::factory(std::string(type), std::string(address));
 }
+
+std::string CameraDriver::getImagePath()
+{
+	return "";	
+}
+
+bool CameraDriver::isValid()
+{
+	return false;
+}

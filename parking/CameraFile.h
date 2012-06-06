@@ -8,8 +8,8 @@ class CameraFile : public CameraDriver
 public:
 	CameraFile(std::string const &address) : path(address) {}
 	std::string getImagePath();
-	bool isValid() const;
-protected:
+	bool isValid();
+
 	std::string path;
 };
 

@@ -11,14 +11,8 @@ public:
 	static CameraDriver * factory(std::string const &type, const char *address);
 	static CameraDriver * factory(const char *type, std::string const &address);
 
-	virtual std::string getImagePath()
-	{
-		return "";	
-	}
-	virtual bool isValid() const
-	{
-		return false;
-	}
+	virtual std::string getImagePath();
+	virtual bool isValid();
 	virtual ~CameraDriver() {};
 };
 

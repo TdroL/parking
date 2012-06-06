@@ -48,7 +48,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>RUN_TESTS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_RUN_TESTS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>C:\Users\tdroL\lib\opencv\build\include\opencv;C:\Program Files\boost\boost_1_49_0;C:\Users\tdroL\lib\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
     </ClCompile>

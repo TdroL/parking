@@ -2,51 +2,32 @@
 //
 
 #include "stdafx.h"
-#include <string>
 #include "Camera.h"
 #include "Detector.h"
+#include <string>
 #ifdef RUN_TESTS
 	#include "Tests.h"
 #endif
 using namespace std;
-
 /*
-#include <cstdio>
-#include <fstream> 
-#include <cmath>
-#include <cv.h>
-#include <cxcore.h>
-#include <highgui.h>
-*/
-/*
-using namespace cv;
-
-typedef unsigned int uint;
-
-size_t corners_size = 7;
-uint padding = 5;
-
-Scalar color_free(0, 255, 0);
-Scalar color_taken(0, 0, 255);
-
-int sgn(int a)
-{
-	return (a > 0) ? 1 : (a < 0) ? -1 : 0;
-}
-
-void draw_rect(Mat &img, uint corners[][2], Scalar &color);
-double count_pixels(Mat &img, uint a[2], uint b[2], Scalar &color);
-double length(uint a[2], uint b[2]);
-size_t file_length(fstream &file);
+static unsigned int corners[][4][2] = {
+	{ {516/2, 462/2}, {548/2, 480/2}, {493/2, 541/2}, {461/2, 523/2} },
+	{ {553/2, 483/2}, {586/2, 502/2}, {531/2, 564/2}, {498/2, 545/2} },
+	{ {457/2, 528/2}, {498/2, 547/2}, {433/2, 611/2}, {401/2, 592/2} },
+	{ {494/2, 550/2}, {527/2, 569/2}, {471/2, 633/2}, {438/2, 614/2} },
+	{ {217/2, 601/2}, {249/2, 621/2}, {192/2, 688/2}, {160/2, 668/2} },
+	{ {255/2, 623/2}, {288/2, 643/2}, {231/2, 711/2}, {198/2, 691/2} },
+	{ {293/2, 645/2}, {326/2, 665/2}, {269/2, 733/2}, {236/2, 713/2} }
+};
 */
 static unsigned int corners[][4][2] = {
-	{ {516, 462}, {548, 480}, {493, 541}, {461, 523} },
-	{ {553, 483}, {586, 502}, {531, 564}, {498, 545} },
-	{ {457, 528}, {498, 547}, {433, 611}, {401, 592} },
-	{ {494, 550}, {527, 569}, {471, 633}, {438, 614} },
-	{ {217, 601}, {249, 621}, {192, 688}, {160, 668} },
-	{ {255, 623}, {288, 643}, {231, 711}, {198, 691} },
-	{ {293, 645}, {326, 665}, {269, 733}, {236, 713} }
+	{ {389, 326}, {446, 343}, {347, 393}, {289, 370} },
+	{ {337, 309}, {384, 324}, {283, 368}, {234, 348} },
+	{ {289, 294}, {332, 307}, {230, 346}, {185, 328} },
+	{ {245, 280}, {283, 291}, {181, 326}, {141, 311} },
+	{ {206, 268}, {240, 278}, {138, 309}, {105, 296} },
+	{ {170, 257}, {200, 266}, {101, 294}, { 70, 282} },
+	{ {138, 248}, {164, 256}, { 66, 280}, { 40, 271} }
 };
 
 int main(int argc, _TCHAR* argv[])
@@ -58,7 +39,7 @@ int main(int argc, _TCHAR* argv[])
 	//return EXIT_SUCCESS;
 #endif
 
-	string camera_address = "C:/Users/tdroL/Documents/Visual Studio 2010/Projects/parking/assets/preview1.jpg";
+	string camera_address = "C:/Users/tdroL/Documents/Visual Studio 2010/Projects/parking/assets/Parking-Lot.jpg"; //preview1.jpg";
 	unique_ptr<CameraDriver> camera(CameraDriver::factory("file", camera_address));
 
 	if ( ! camera->isValid())
@@ -77,260 +58,34 @@ int main(int argc, _TCHAR* argv[])
 		return EXIT_FAILURE;
 	}
 
-	size_t spots_length = 7;
-	Spot *spots = new Spot[spots_length];
+	vector<Spot *> spots;
 
-	for (size_t i = 0; i < spots_length; i++)
+	for (size_t i = 0; i < 7; i++)
 	{
-		Spot &spot = spots[i];
+		Spot *spot = new Spot;
 
 		for (size_t j = 0; j < 4; j++)
 		{
-			spot.corners[j].x = corners[i][j][0] / 2;
-			spot.corners[j].y = corners[i][j][1] / 2;
+			spot->corners[j].x = corners[i][j][0];
+			spot->corners[j].y = corners[i][j][1];
 		}
 
-		spots[i].status = Free;
+		spot->resetStatus(Free);
+
+		spots.push_back(spot);
 	}
 
-	detector.loadSpots(spots, spots_length);
+	detector.findFreeSpots(spots, 0.125 + 0.0625);
 
-	printf("findFreeSpots() = %u\n", detector.findFreeSpots());
-
-	detector.displayGrid();
-/*
-	fstream info_file("../assets/parking-1/info.txt", ios::out);
-
-	if ( ! info_file.is_open())
+	int count = 0;
+	for (size_t i = 0, l = spots.size(); i < l; i++)
 	{
-		printf("Nie mozna otworzyc pliku info.txt\n");
-		system("pause");
-		exit(EXIT_FAILURE);
+		count += (spots[i]->status == spots[i]->original_status);
 	}
 
-	uint cam_count = 0;
+	printf("findFreeSpots() = %u\n", count);
 
-	while ( ! info_file.eof())
-	{
-		char buffer[256];
-		info_file.getline(buffer, 256);
-		
-		if (sscanf(buffer, "cams %u", &cam_count) && cam_count > 0)
-		{
-			break;
-		}
-	}
+	detector.displayGrid(spots);
 
-	info_file.close();
-
-	if (cam_count == 0)
-	{
-		printf("Brak kamer\n");
-		system("pause");
-		exit(EXIT_FAILURE);
-	}
-
-	for (int k = 1; k <= 1 cam_count; k++)
-	{
-		fstream cam_info("", ios::in);
-	}
-
-    const char *img = "C:/Users/tdroL/Documents/Visual Studio 2010/Projects/parking/assets/preview1.jpg";
-    Mat src = imread(img, 0);
-
-    if ( ! src.data)
-    {
-		printf("Nie mozna bylo wczytac obrazu");
-		system("pause");
-		exit(EXIT_FAILURE);
-	}
-
-	Mat dst;
-
-	Canny(src, dst, 1, 100, 3);
-	cvtColor(src, src, CV_GRAY2RGB);
-
-	vector<Vec4i> lines;
-	HoughLinesP(dst, lines, 1, CV_PI/180, 25, 10, 4);
-
-	for (size_t i = 0; i < lines.size(); i++)
-    {
-        line(src, Point(lines[i][0], lines[i][1]),
-			      Point(lines[i][2], lines[i][3]), 
-				  color_line, 2, 0);
-    }
-
-	cvtColor(dst, dst, CV_GRAY2RGB);
-
-	for (size_t i = 0; i < corners_size; i++)
-	{
-		double count = 0;
-
-		count += count_pixels(src, corners[i][0], corners[i][2], color_line); // 1
-		count += count_pixels(src, corners[i][1], corners[i][3], color_line); // 2
-
-		uint a[2], b[2], c[2], d[2];
-
-		a[0] = (corners[i][0][0] + corners[i][1][0]) / 2;
-		a[1] = (corners[i][0][1] + corners[i][1][1]) / 2;
-
-		b[0] = (corners[i][1][0] + corners[i][2][0]) / 2;
-		b[1] = (corners[i][1][1] + corners[i][2][1]) / 2;
-
-		c[0] = (corners[i][2][0] + corners[i][3][0]) / 2;
-		c[1] = (corners[i][2][1] + corners[i][3][1]) / 2;
-
-		d[0] = (corners[i][3][0] + corners[i][0][0]) / 2;
-		d[1] = (corners[i][3][1] + corners[i][0][1]) / 2;
-
-		count += count_pixels(src, a, b, color_line); // 3
-		count += count_pixels(src, a, c, color_line); // 4
-		count += count_pixels(src, a, d, color_line); // 5
-
-		count += count_pixels(src, b, c, color_line); // 6
-		count += count_pixels(src, b, d, color_line); // 7
-
-		count += count_pixels(src, c, d, color_line); // 8
-
-		count += count_pixels(src, a, corners[i][2], color_line); // 9
-		count += count_pixels(src, a, corners[i][3], color_line); // 10
-
-		count += count_pixels(src, b, corners[i][0], color_line); // 11
-		count += count_pixels(src, b, corners[i][3], color_line); // 12
-
-		count += count_pixels(src, c, corners[i][0], color_line); // 13
-		count += count_pixels(src, c, corners[i][1], color_line); // 14
-
-		count += count_pixels(src, d, corners[i][1], color_line); // 15
-		count += count_pixels(src, d, corners[i][2], color_line); // 16
-
-		count /= 16;
-
-		printf("Miejsce #%i: %f\n", i, count);
-
-		if (count <= 0.2)
-		{
-			draw_rect(dst, corners[i], color_free);
-		}
-		else
-		{
-			draw_rect(dst, corners[i], color_taken);
-		}
-	}
-
-	namedWindow("Source Gray", 1);
-    imshow("Source Gray", src);
-
-	namedWindow("Source Canny", 1);
-    imshow("Source Canny", dst);
-
-	waitKey(0);
-*/
     return EXIT_SUCCESS;
 }
-/*
-double count_pixels(Mat &img, uint a[2], uint b[2], Scalar &color)
-{
-	uint found = 0;
-	uint checked = 0;
-
-	uint lx = abs((int) a[0] - (int) b[0]);
-	uint ly = abs((int) a[1] - (int) b[1]);
-
-	int sgn_x = sgn((int) a[0] - (int) b[0]);
-	int sgn_y = sgn((int) a[1] - (int) b[1]);
-
-	uint step = 3;
-
-	uint px = a[0], py = a[1];
-
-	if (lx > ly)
-	{
-		// po osi X
-		uint sy = step * ly / lx;
-
-		for (uint i = 0, l = lx / 4; i < l; i++)
-		{
-			uchar *ptr = img.ptr(py, px);
-
-			if (ptr[0] == color[0] && ptr[1] == color[1] && ptr[2] == color[2])
-			{
-				found++;
-			}
-
-			checked++;
-
-			px += -sgn_x * 4;
-			py += -sgn_y * sy;
-		}
-	}
-	else
-	{
-		// po osi Y
-		uint sx = step * lx / ly;
-
-		for (uint i = 0, l = ly / 4; i < l; i++)
-		{
-			uchar *ptr = img.ptr(py, px);
-
-			if (ptr[0] == color[0] && ptr[1] == color[1] && ptr[2] == color[2])
-			{
-				found++;
-			}
-
-			checked++;
-
-			py += -sgn_y * 4;
-			px += -sgn_x * sx;
-		}
-	}
-
-	if (checked == 0)
-	{
-		return 0;
-	}
-
-	return (double) found / (double) checked;
-}
-
-void draw_rect(Mat &img, uint corners[][2], Scalar &color)
-{
-	line(img, Point(corners[0][0], corners[0][1]),
-			  Point(corners[1][0], corners[1][1]), 
-			  color, 2, CV_AA);
-
-	line(img, Point(corners[1][0], corners[1][1]),
-			  Point(corners[2][0], corners[2][1]), 
-			  color, 2, CV_AA);
-
-	line(img, Point(corners[2][0], corners[2][1]),
-			  Point(corners[3][0], corners[3][1]), 
-			  color, 2, CV_AA);
-
-	line(img, Point(corners[3][0], corners[3][1]),
-			  Point(corners[0][0], corners[0][1]), 
-			  color, 2, CV_AA);
-}
-
-double length(uint a[2], uint b[2])
-{
-	uint p, q;
-
-	p = a[0] - b[0];
-	q = a[1] - b[1];
-
-	return sqrt((double) (p*p + q*q));
-}
-
-size_t file_length(fstream &is)
-{
-	streampos current = is.tellg();
-
-	is.seekg (0, ios::end);
-	size_t length = is.tellg();
-	
-	is.seekg (0, current);
-
-	return length;
-}
-*/
