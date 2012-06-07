@@ -29,6 +29,16 @@ struct Spot
 	SpotStatus status;
 	SpotStatus original_status;
 
+	Spot() {}
+	Spot(const Spot &spot)
+	{
+		for (size_t i = 0; i < 4; i++)
+		{
+			corners[i].x = spot.corners[i].x;
+			corners[i].y = spot.corners[i].y;
+		}
+	}
+
 	void resetStatus(int status_)
 	{
 		switch (status_)
@@ -71,14 +81,17 @@ struct Spot
 class Detector
 {
 public:
+	double scale;
+	cv::Mat img;
+
 	bool loadImage(std::string const &path, double threshold_low = 33.0, double threshold_high = 100.0, double scale = 1.0);
 	void findFreeSpots(std::vector<Spot *> &spots, double threshold = 0.125);
 	bool isPointInside(cv::Point const (&corners)[4], unsigned int x, unsigned int y);
+	void scalePoints(cv::Point (&corners)[4]);
 	CountStats countPoints(cv::Point const (&corners)[4]);
 
 	void displayGrid(std::vector<Spot *> &spots);
-
-	cv::Mat img;
+	void drawGrid(cv::Mat &img, std::vector<Spot *> &spots);
 };
 
 

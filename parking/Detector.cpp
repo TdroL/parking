@@ -2,7 +2,7 @@
 #include "Detector.h"
 #include <algorithm>
 
-bool Detector::loadImage(std::string const &path, double threshold_low, double threshold_high, double scale)
+bool Detector::loadImage(std::string const &path, double threshold_low, double threshold_high, double scale_)
 {
 	// img.deallocate();
 	cv::Mat src = cv::imread(path, 0);
@@ -12,6 +12,8 @@ bool Detector::loadImage(std::string const &path, double threshold_low, double t
 		return false;
 	}
 
+	scale = scale_;
+
 	if (scale != 1.0)
 	{
 		cv::resize(src, src, cv::Size(), scale, scale);
@@ -20,6 +22,15 @@ bool Detector::loadImage(std::string const &path, double threshold_low, double t
 	cv::Canny(src, img, threshold_low, threshold_high);
 
 	return (img.data != nullptr);
+}
+
+void Detector::scalePoints(cv::Point (&corners)[4])
+{
+	for (size_t i = 0; i < 4; i++)
+	{
+		corners[i].x = (int) (corners[i].x * scale);
+		corners[i].y = (int) (corners[i].y * scale);
+	}
 }
 
 void Detector::findFreeSpots(std::vector<Spot *> &spots, double threshold)
@@ -33,7 +44,19 @@ void Detector::findFreeSpots(std::vector<Spot *> &spots, double threshold)
 			continue;
 		}
 
-		CountStats const &stats = countPoints(spot.corners);
+		cv::Point corners[4] = {
+			spot.corners[0],
+			spot.corners[1],
+			spot.corners[2],
+			spot.corners[3],
+		};
+
+		if (scale != 1.0)
+		{
+			scalePoints(corners);
+		}
+
+		CountStats const &stats = countPoints(corners);
 
 		double factor = (double) stats.count / (double) stats.scanned;
 
@@ -122,11 +145,21 @@ void Detector::displayGrid(std::vector<Spot *> &spots)
 	cv::Mat dst;
 	cvtColor(img, dst, CV_GRAY2RGB);
 
+	drawGrid(dst, spots);
+
+	cv::namedWindow("Source Canny", 1);
+    cv::imshow("Source Canny", dst);
+
+	cv::waitKey(0);
+}
+
+void Detector::drawGrid(cv::Mat &img, std::vector<Spot *> &spots)
+{
 	cv::Scalar color_free(0, 255, 0);
 	cv::Scalar color_occupied(0, 128, 255);
 	cv::Scalar color_blocked(0, 0, 255);
 
-	auto draw_rect = [] (cv::Mat &img, cv::Point corners[4], cv::Scalar &color)
+	auto draw_rect = [&img] (cv::Point corners[4], cv::Scalar &color)
 	{
 		cv::line(img, corners[0], corners[1], color, 2, CV_AA);
 		cv::line(img, corners[1], corners[2], color, 2, CV_AA);
@@ -138,22 +171,29 @@ void Detector::displayGrid(std::vector<Spot *> &spots)
 	{
 		Spot &spot = *spots[i];
 
+		cv::Point corners[4] = {
+			spot.corners[0],
+			spot.corners[1],
+			spot.corners[2],
+			spot.corners[3],
+		};
+
+		if (scale != 1.0)
+		{
+			scalePoints(corners);
+		}
+
 		switch (spot.status)
 		{
 		case Free:
-			draw_rect(dst, spot.corners, color_free);
+			draw_rect(corners, color_free);
 			break;
 		case Occupied:
-			draw_rect(dst, spot.corners, color_occupied);
+			draw_rect(corners, color_occupied);
 			break;
 		case Blocked:
-			draw_rect(dst, spot.corners, color_blocked);
+			draw_rect(corners, color_blocked);
 			break;
 		}
 	}
-
-	cv::namedWindow("Source Canny", 1);
-    cv::imshow("Source Canny", dst);
-
-	cv::waitKey(0);
 }
