@@ -1,0 +1,27 @@
+﻿Build started 2012-06-08 21:53:48.
+     1>Project "C:\Users\tdrol\documents\visual studio 2010\Projects\parking\detector\detector.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release Lib\detector.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\Users\tdroL\lib\opencv\build\include\opencv /I"C:\Program Files\boost\boost_1_49_0" /IC:\Users\tdroL\lib\opencv\build\include /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release Lib\detector.pch" /Fo"Release Lib\\" /Fd"Release Lib\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\tdrol\documents\visual studio 2010\Projects\parking\Release Lib\detector.lib" /NOLOGO /LTCG "Release Lib\CameraDriver.obj"
+         "Release Lib\CameraFile.obj"
+         "Release Lib\Detector.obj"
+         "Release Lib\main.obj"
+         "Release Lib\stdafx.obj"
+         "Release Lib\TestCameraDriver.obj"
+         "Release Lib\TestCameraFile.obj"
+         "Release Lib\TestClass.obj"
+         "Release Lib\TestDetector.obj"
+         detector.vcxproj -> C:\Users\tdrol\documents\visual studio 2010\Projects\parking\Release Lib\detector.lib
+       FinalizeBuildStatus:
+         Deleting file "Release Lib\detector.unsuccessfulbuild".
+         Touching "Release Lib\detector.lastbuildstate".
+     1>Done Building Project "C:\Users\tdrol\documents\visual studio 2010\Projects\parking\detector\detector.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.86
