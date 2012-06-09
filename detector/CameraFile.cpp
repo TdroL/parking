@@ -16,6 +16,9 @@ bool CameraFile::isValid()
 #else
 	status = ((f = fopen(getImagePath().c_str(), "r")) != 0);
 #endif
-	fclose(f);
+	if (status)
+	{
+		fclose(f);
+	}
 	return status;
 }

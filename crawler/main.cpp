@@ -90,12 +90,11 @@ public:
 
 unsigned int get_last_insert_id(string table)
 {
-	unique_ptr<PreparedStatement> query(con->prepareStatement("SELECT LAST_INSERT_ID() FROM " + table)); 
-	unique_ptr<ResultSet> insert_res(query->executeQuery());
-	insert_res->first();
-	return insert_res->getUInt(1);
+	unique_ptr<Statement> query(con->createStatement());
+	unique_ptr<ResultSet> res(query->executeQuery("SELECT LAST_INSERT_ID() FROM " + table + " LIMIT 1"));
+	
+	return res->first() ? res->getUInt(1) : 0;
 }
-
 
 struct Conf {
 	SQLString host;
@@ -130,7 +129,7 @@ int main(int argc, char *argv[])
 		{
 			if (i + 1 >= argc || argv[i+1][0] == '-')
 			{
-				fprintf(stderr, " Usage: -h [host]\n");
+				fprintf(stderr, " Usage: -h host\n");
 				return EXIT_FAILURE;
 			}
 
@@ -140,7 +139,7 @@ int main(int argc, char *argv[])
 		{
 			if (i + 1 >= argc || argv[i+1][0] == '-')
 			{
-				fprintf(stderr, " Usage: -u [username]\n");
+				fprintf(stderr, " Usage: -u user\n");
 				return EXIT_FAILURE;
 			}
 
@@ -150,7 +149,7 @@ int main(int argc, char *argv[])
 		{
 			if (i + 1 >= argc || argv[i+1][0] == '-')
 			{
-				fprintf(stderr, " Usage: -p [password]\n");
+				fprintf(stderr, " Usage: -p password\n");
 				return EXIT_FAILURE;
 			}
 
@@ -160,17 +159,17 @@ int main(int argc, char *argv[])
 		{
 			if (i + 1 >= argc || argv[i+1][0] == '-')
 			{
-				fprintf(stderr, " Usage: -p [schema]\n");
+				fprintf(stderr, " Usage: -s schema\n");
 				return EXIT_FAILURE;
 			}
 
 			conf.schema = argv[++i];
 		}
-		else if (arg == "-t")
+		else if (arg == "-d")
 		{
 			if (i + 1 >= argc || argv[i+1][0] == '-')
 			{
-				fprintf(stderr, " Usage: -t [no rows sleep in seconds]\n");
+				fprintf(stderr, " Usage: -d delay\n");
 				return EXIT_FAILURE;
 			}
 
@@ -180,7 +179,7 @@ int main(int argc, char *argv[])
 		{
 			if (i + 1 >= argc || argv[i+1][0] == '-')
 			{
-				fprintf(stderr, " Usage: -t [scan interval in seconds]\n");
+				fprintf(stderr, " Usage: -i interval\n");
 				return EXIT_FAILURE;
 			}
 
@@ -199,11 +198,15 @@ int main(int argc, char *argv[])
 		driver = get_driver_instance();
 
 		con.reset(driver->connect(conf.host, conf.username, conf.password));
+		if ( ! con || con->isClosed())
+		{
+			printf("Failed.\n");
+			return EXIT_FAILURE;
+		}
+
 		con->setSchema(conf.schema);
 
 		printf("Connected.\n");
-
-		stmt.reset(con->createStatement());
 
 		for (EVER)
 		{
@@ -228,7 +231,6 @@ int main(int argc, char *argv[])
 			query->setUInt(1, parking_id);
 			query->executeUpdate();
 			unsigned int stats_parking_id = get_last_insert_id("stats_parking");
-
 			Crawler crawler(parking_id);
 
 			while (crawler.hasNext())

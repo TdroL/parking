@@ -639,28 +639,28 @@ PUBLIC	??1?$unique_ptr@VCameraDriver@@U?$default_delete@VCameraDriver@@@std@@@st
 PUBLIC	??_C@_0CC@CBGDFNCM@Failed?5to?5load?5image?5from?5camera@ ; `string'
 PUBLIC	??C?$unique_ptr@VCameraDriver@@U?$default_delete@VCameraDriver@@@std@@@std@@QBEPAVCameraDriver@@XZ ; std::unique_ptr<CameraDriver,std::default_delete<CameraDriver> >::operator->
 PUBLIC	??0?$unique_ptr@VCameraDriver@@U?$default_delete@VCameraDriver@@@std@@@std@@QAE@PAVCameraDriver@@@Z ; std::unique_ptr<CameraDriver,std::default_delete<CameraDriver> >::unique_ptr<CameraDriver,std::default_delete<CameraDriver> >
-PUBLIC	??_C@_0HA@MDGKCKGK@?5Usage?3?5?9s?5?$FLspots?5list?0?5regexp?5f@ ; `string'
+PUBLIC	??_C@_0GO@CFNIIOJA@?5Usage?3?5?9s?5spots?5list?0?5regexp?5fo@ ; `string'
 PUBLIC	??_C@_0DC@OBNPEBMF@?5Error?3?5spots?5list?5length?5must?5b@ ; `string'
 PUBLIC	?clear@?$vector@USpot@@V?$allocator@USpot@@@std@@@std@@QAEXXZ ; std::vector<Spot,std::allocator<Spot> >::clear
-PUBLIC	??_C@_0FA@MDBHFNFI@?5Usage?3?5?9s?5?$FLspots?5list?0?5regexp?5f@ ; `string'
+PUBLIC	??_C@_0EO@EEOIBHON@?5Usage?3?5?9s?5spots?5list?0?5regexp?5fo@ ; `string'
 PUBLIC	??_C@_02DEDJNJGL@?9s?$AA@			; `string'
-PUBLIC	??_C@_0BN@EJJAKHPP@?5Usage?3?5?9n?5?$FLthreshold?5scan?$FN?6?$AA@ ; `string'
+PUBLIC	??_C@_0BL@DFDIGCHI@?5Usage?3?5?9n?5threshold?5scan?6?$AA@ ; `string'
 PUBLIC	??_C@_02MLFFLFHH@?9n?$AA@			; `string'
-PUBLIC	??_C@_0BE@EHEPMCHC@?5Usage?3?5?9c?5?$FLscale?$FN?6?$AA@ ; `string'
+PUBLIC	??_C@_0BC@OALEALGD@?5Usage?3?5?9c?5scale?6?$AA@	; `string'
 PUBLIC	??_C@_02HOPLMLDK@?9c?$AA@			; `string'
-PUBLIC	??_C@_0BM@PMFEJIFP@?5Usage?3?5?9l?5?$FLthreshold?5low?$FN?6?$AA@ ; `string'
+PUBLIC	??_C@_0BK@IHPDFHL@?5Usage?3?5?9l?5threshold?5low?6?$AA@ ; `string'
 PUBLIC	??_C@_02PJGDNHPF@?9l?$AA@			; `string'
-PUBLIC	??_C@_0BN@KDNKHLAE@?5Usage?3?5?9h?5?$FLthreshold?5high?$FN?6?$AA@ ; `string'
+PUBLIC	??_C@_0BL@DJADBHGK@?5Usage?3?5?9h?5threshold?5high?6?$AA@ ; `string'
 PUBLIC	??_C@_02JNAPBCPB@?9h?$AA@			; `string'
-PUBLIC	??_C@_0BK@PGBBJAHP@?5Usage?3?5?9o?5?$FLoutput?5file?$FN?6?$AA@ ; `string'
+PUBLIC	??_C@_0BI@PNDHBKHA@?5Usage?3?5?9o?5output?5file?6?$AA@ ; `string'
 PUBLIC	??_C@_02NCEOIEDG@?9o?$AA@			; `string'
-PUBLIC	??_C@_0BK@BGJNBGCF@?5Usage?3?5?9t?5?$FLcamera?5type?$FN?6?$AA@ ; `string'
+PUBLIC	??_C@_0BI@ICDCHCOI@?5Usage?3?5?9t?5camera?5type?6?$AA@ ; `string'
 PUBLIC	??_C@_02HLHIEPKM@?9t?$AA@			; `string'
 PUBLIC	??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator=
 PUBLIC	??1?$vector@USpot@@V?$allocator@USpot@@@std@@@std@@QAE@XZ ; std::vector<Spot,std::allocator<Spot> >::~vector<Spot,std::allocator<Spot> >
 PUBLIC	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	??_C@_05PDJBBECF@pause?$AA@			; `string'
-PUBLIC	??_C@_0BN@FKIGIKHH@?5Usage?3?5?9a?5?$FLcamera?5address?$FN?6?$AA@ ; `string'
+PUBLIC	??_C@_0BL@PKGNIOMG@?5Usage?3?5?9a?5camera?5address?6?$AA@ ; `string'
 PUBLIC	??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z ; std::operator==<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	??_C@_02EMMNKJLI@?9a?$AA@			; `string'
 PUBLIC	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
@@ -711,76 +711,76 @@ CONST	SEGMENT
 ??_C@_0CC@CBGDFNCM@Failed?5to?5load?5image?5from?5camera@ DB 'Failed to l'
 	DB	'oad image from camera', 0aH, 00H		; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0HA@MDGKCKGK@?5Usage?3?5?9s?5?$FLspots?5list?0?5regexp?5f@
+;	COMDAT ??_C@_0GO@CFNIIOJA@?5Usage?3?5?9s?5spots?5list?0?5regexp?5fo@
 CONST	SEGMENT
-??_C@_0HA@MDGKCKGK@?5Usage?3?5?9s?5?$FLspots?5list?0?5regexp?5f@ DB ' Usa'
-	DB	'ge: -s [spots list, regexp format: "(\d+ \d+ \d+ \d+ \d+ \d+ '
-	DB	'\d+ \d+)( \d+ \d+ \d+ \d+ \d+ \d+ \d+ \d+)*"]', 0aH, 00H ; `string'
+??_C@_0GO@CFNIIOJA@?5Usage?3?5?9s?5spots?5list?0?5regexp?5fo@ DB ' Usage:'
+	DB	' -s spots list, regexp format: "(\d+ \d+ \d+ \d+ \d+ \d+ \d+ '
+	DB	'\d+)( \d+ \d+ \d+ \d+ \d+ \d+ \d+ \d+)*"', 0aH, 00H ; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_0DC@OBNPEBMF@?5Error?3?5spots?5list?5length?5must?5b@
 CONST	SEGMENT
 ??_C@_0DC@OBNPEBMF@?5Error?3?5spots?5list?5length?5must?5b@ DB ' Error: s'
 	DB	'pots list length must be divisible by 8', 0aH, 00H ; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0FA@MDBHFNFI@?5Usage?3?5?9s?5?$FLspots?5list?0?5regexp?5f@
+;	COMDAT ??_C@_0EO@EEOIBHON@?5Usage?3?5?9s?5spots?5list?0?5regexp?5fo@
 CONST	SEGMENT
-??_C@_0FA@MDBHFNFI@?5Usage?3?5?9s?5?$FLspots?5list?0?5regexp?5f@ DB ' Usa'
-	DB	'ge: -s [spots list, regexp format: "(\d+ \d+ \d+ \d+)( \d+ \d'
-	DB	'+ \d+ \d+)*"]', 0aH, 00H			; `string'
+??_C@_0EO@EEOIBHON@?5Usage?3?5?9s?5spots?5list?0?5regexp?5fo@ DB ' Usage:'
+	DB	' -s spots list, regexp format: "(\d+ \d+ \d+ \d+)( \d+ \d+ \d'
+	DB	'+ \d+)*"', 0aH, 00H				; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_02DEDJNJGL@?9s?$AA@
 CONST	SEGMENT
 ??_C@_02DEDJNJGL@?9s?$AA@ DB '-s', 00H			; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0BN@EJJAKHPP@?5Usage?3?5?9n?5?$FLthreshold?5scan?$FN?6?$AA@
+;	COMDAT ??_C@_0BL@DFDIGCHI@?5Usage?3?5?9n?5threshold?5scan?6?$AA@
 CONST	SEGMENT
-??_C@_0BN@EJJAKHPP@?5Usage?3?5?9n?5?$FLthreshold?5scan?$FN?6?$AA@ DB ' Us'
-	DB	'age: -n [threshold scan]', 0aH, 00H		; `string'
+??_C@_0BL@DFDIGCHI@?5Usage?3?5?9n?5threshold?5scan?6?$AA@ DB ' Usage: -n '
+	DB	'threshold scan', 0aH, 00H			; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_02MLFFLFHH@?9n?$AA@
 CONST	SEGMENT
 ??_C@_02MLFFLFHH@?9n?$AA@ DB '-n', 00H			; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0BE@EHEPMCHC@?5Usage?3?5?9c?5?$FLscale?$FN?6?$AA@
+;	COMDAT ??_C@_0BC@OALEALGD@?5Usage?3?5?9c?5scale?6?$AA@
 CONST	SEGMENT
-??_C@_0BE@EHEPMCHC@?5Usage?3?5?9c?5?$FLscale?$FN?6?$AA@ DB ' Usage: -c [s'
-	DB	'cale]', 0aH, 00H				; `string'
+??_C@_0BC@OALEALGD@?5Usage?3?5?9c?5scale?6?$AA@ DB ' Usage: -c scale', 0aH
+	DB	00H						; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_02HOPLMLDK@?9c?$AA@
 CONST	SEGMENT
 ??_C@_02HOPLMLDK@?9c?$AA@ DB '-c', 00H			; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0BM@PMFEJIFP@?5Usage?3?5?9l?5?$FLthreshold?5low?$FN?6?$AA@
+;	COMDAT ??_C@_0BK@IHPDFHL@?5Usage?3?5?9l?5threshold?5low?6?$AA@
 CONST	SEGMENT
-??_C@_0BM@PMFEJIFP@?5Usage?3?5?9l?5?$FLthreshold?5low?$FN?6?$AA@ DB ' Usa'
-	DB	'ge: -l [threshold low]', 0aH, 00H		; `string'
+??_C@_0BK@IHPDFHL@?5Usage?3?5?9l?5threshold?5low?6?$AA@ DB ' Usage: -l th'
+	DB	'reshold low', 0aH, 00H			; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_02PJGDNHPF@?9l?$AA@
 CONST	SEGMENT
 ??_C@_02PJGDNHPF@?9l?$AA@ DB '-l', 00H			; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0BN@KDNKHLAE@?5Usage?3?5?9h?5?$FLthreshold?5high?$FN?6?$AA@
+;	COMDAT ??_C@_0BL@DJADBHGK@?5Usage?3?5?9h?5threshold?5high?6?$AA@
 CONST	SEGMENT
-??_C@_0BN@KDNKHLAE@?5Usage?3?5?9h?5?$FLthreshold?5high?$FN?6?$AA@ DB ' Us'
-	DB	'age: -h [threshold high]', 0aH, 00H		; `string'
+??_C@_0BL@DJADBHGK@?5Usage?3?5?9h?5threshold?5high?6?$AA@ DB ' Usage: -h '
+	DB	'threshold high', 0aH, 00H			; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_02JNAPBCPB@?9h?$AA@
 CONST	SEGMENT
 ??_C@_02JNAPBCPB@?9h?$AA@ DB '-h', 00H			; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0BK@PGBBJAHP@?5Usage?3?5?9o?5?$FLoutput?5file?$FN?6?$AA@
+;	COMDAT ??_C@_0BI@PNDHBKHA@?5Usage?3?5?9o?5output?5file?6?$AA@
 CONST	SEGMENT
-??_C@_0BK@PGBBJAHP@?5Usage?3?5?9o?5?$FLoutput?5file?$FN?6?$AA@ DB ' Usage'
-	DB	': -o [output file]', 0aH, 00H		; `string'
+??_C@_0BI@PNDHBKHA@?5Usage?3?5?9o?5output?5file?6?$AA@ DB ' Usage: -o out'
+	DB	'put file', 0aH, 00H				; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_02NCEOIEDG@?9o?$AA@
 CONST	SEGMENT
 ??_C@_02NCEOIEDG@?9o?$AA@ DB '-o', 00H			; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0BK@BGJNBGCF@?5Usage?3?5?9t?5?$FLcamera?5type?$FN?6?$AA@
+;	COMDAT ??_C@_0BI@ICDCHCOI@?5Usage?3?5?9t?5camera?5type?6?$AA@
 CONST	SEGMENT
-??_C@_0BK@BGJNBGCF@?5Usage?3?5?9t?5?$FLcamera?5type?$FN?6?$AA@ DB ' Usage'
-	DB	': -t [camera type]', 0aH, 00H		; `string'
+??_C@_0BI@ICDCHCOI@?5Usage?3?5?9t?5camera?5type?6?$AA@ DB ' Usage: -t cam'
+	DB	'era type', 0aH, 00H				; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_02HLHIEPKM@?9t?$AA@
 CONST	SEGMENT
@@ -790,10 +790,10 @@ CONST	ENDS
 CONST	SEGMENT
 ??_C@_05PDJBBECF@pause?$AA@ DB 'pause', 00H		; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0BN@FKIGIKHH@?5Usage?3?5?9a?5?$FLcamera?5address?$FN?6?$AA@
+;	COMDAT ??_C@_0BL@PKGNIOMG@?5Usage?3?5?9a?5camera?5address?6?$AA@
 CONST	SEGMENT
-??_C@_0BN@FKIGIKHH@?5Usage?3?5?9a?5?$FLcamera?5address?$FN?6?$AA@ DB ' Us'
-	DB	'age: -a [camera address]', 0aH, 00H		; `string'
+??_C@_0BL@PKGNIOMG@?5Usage?3?5?9a?5camera?5address?6?$AA@ DB ' Usage: -a '
+	DB	'camera address', 0aH, 00H			; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_02EMMNKJLI@?9a?$AA@
 CONST	SEGMENT
@@ -910,9 +910,9 @@ _main	PROC						; COMDAT
 	mov	DWORD PTR fs:0, eax
 
 ; 66   : #ifdef RUN_TESTS
-; 67   : 	TestClass tests;
-; 68   : 	tests.run();
-; 69   : 	system("pause");
+; 67   : 	//TestClass tests;
+; 68   : 	//tests.run();
+; 69   : 	//system("pause");
 ; 70   : 	//return EXIT_SUCCESS;
 ; 71   : #endif
 ; 72   : 	
@@ -1044,10 +1044,10 @@ $LN56@main:
 $LN51@main:
 
 ; 95   : 			{
-; 96   : 				fprintf(stderr, " Usage: -a [camera address]\n");
+; 96   : 				fprintf(stderr, " Usage: -a camera address\n");
 
 	mov	esi, esp
-	push	OFFSET ??_C@_0BN@FKIGIKHH@?5Usage?3?5?9a?5?$FLcamera?5address?$FN?6?$AA@
+	push	OFFSET ??_C@_0BL@PKGNIOMG@?5Usage?3?5?9a?5camera?5address?6?$AA@
 	mov	edi, esp
 	call	DWORD PTR __imp____iob_func
 	cmp	edi, esp
@@ -1122,10 +1122,10 @@ $LN53@main:
 $LN47@main:
 
 ; 105  : 			{
-; 106  : 				fprintf(stderr, " Usage: -t [camera type]\n");
+; 106  : 				fprintf(stderr, " Usage: -t camera type\n");
 
 	mov	esi, esp
-	push	OFFSET ??_C@_0BK@BGJNBGCF@?5Usage?3?5?9t?5?$FLcamera?5type?$FN?6?$AA@
+	push	OFFSET ??_C@_0BI@ICDCHCOI@?5Usage?3?5?9t?5camera?5type?6?$AA@
 	mov	edi, esp
 	call	DWORD PTR __imp____iob_func
 	cmp	edi, esp
@@ -1200,10 +1200,10 @@ $LN49@main:
 $LN43@main:
 
 ; 115  : 			{
-; 116  : 				fprintf(stderr, " Usage: -o [output file]\n");
+; 116  : 				fprintf(stderr, " Usage: -o output file\n");
 
 	mov	esi, esp
-	push	OFFSET ??_C@_0BK@PGBBJAHP@?5Usage?3?5?9o?5?$FLoutput?5file?$FN?6?$AA@
+	push	OFFSET ??_C@_0BI@PNDHBKHA@?5Usage?3?5?9o?5output?5file?6?$AA@
 	mov	edi, esp
 	call	DWORD PTR __imp____iob_func
 	cmp	edi, esp
@@ -1278,10 +1278,10 @@ $LN45@main:
 $LN39@main:
 
 ; 125  : 			{
-; 126  : 				fprintf(stderr, " Usage: -h [threshold high]\n");
+; 126  : 				fprintf(stderr, " Usage: -h threshold high\n");
 
 	mov	esi, esp
-	push	OFFSET ??_C@_0BN@KDNKHLAE@?5Usage?3?5?9h?5?$FLthreshold?5high?$FN?6?$AA@
+	push	OFFSET ??_C@_0BL@DJADBHGK@?5Usage?3?5?9h?5threshold?5high?6?$AA@
 	mov	edi, esp
 	call	DWORD PTR __imp____iob_func
 	cmp	edi, esp
@@ -1360,10 +1360,10 @@ $LN41@main:
 $LN35@main:
 
 ; 135  : 			{
-; 136  : 				fprintf(stderr, " Usage: -l [threshold low]\n");
+; 136  : 				fprintf(stderr, " Usage: -l threshold low\n");
 
 	mov	esi, esp
-	push	OFFSET ??_C@_0BM@PMFEJIFP@?5Usage?3?5?9l?5?$FLthreshold?5low?$FN?6?$AA@
+	push	OFFSET ??_C@_0BK@IHPDFHL@?5Usage?3?5?9l?5threshold?5low?6?$AA@
 	mov	edi, esp
 	call	DWORD PTR __imp____iob_func
 	cmp	edi, esp
@@ -1442,10 +1442,10 @@ $LN37@main:
 $LN31@main:
 
 ; 145  : 			{
-; 146  : 				fprintf(stderr, " Usage: -c [scale]\n");
+; 146  : 				fprintf(stderr, " Usage: -c scale\n");
 
 	mov	esi, esp
-	push	OFFSET ??_C@_0BE@EHEPMCHC@?5Usage?3?5?9c?5?$FLscale?$FN?6?$AA@
+	push	OFFSET ??_C@_0BC@OALEALGD@?5Usage?3?5?9c?5scale?6?$AA@
 	mov	edi, esp
 	call	DWORD PTR __imp____iob_func
 	cmp	edi, esp
@@ -1524,10 +1524,10 @@ $LN33@main:
 $LN27@main:
 
 ; 155  : 			{
-; 156  : 				fprintf(stderr, " Usage: -n [threshold scan]\n");
+; 156  : 				fprintf(stderr, " Usage: -n threshold scan\n");
 
 	mov	esi, esp
-	push	OFFSET ??_C@_0BN@EJJAKHPP@?5Usage?3?5?9n?5?$FLthreshold?5scan?$FN?6?$AA@
+	push	OFFSET ??_C@_0BL@DFDIGCHI@?5Usage?3?5?9n?5threshold?5scan?6?$AA@
 	mov	edi, esp
 	call	DWORD PTR __imp____iob_func
 	cmp	edi, esp
@@ -1599,10 +1599,10 @@ $LN29@main:
 	jl	SHORT $LN24@main
 
 ; 165  : 			{
-; 166  : 				fprintf(stderr, " Usage: -s [spots list, regexp format: \"(\\d+ \\d+ \\d+ \\d+)( \\d+ \\d+ \\d+ \\d+)*\"]\n");
+; 166  : 				fprintf(stderr, " Usage: -s spots list, regexp format: \"(\\d+ \\d+ \\d+ \\d+)( \\d+ \\d+ \\d+ \\d+)*\"\n");
 
 	mov	esi, esp
-	push	OFFSET ??_C@_0FA@MDBHFNFI@?5Usage?3?5?9s?5?$FLspots?5list?0?5regexp?5f@
+	push	OFFSET ??_C@_0EO@EEOIBHON@?5Usage?3?5?9s?5spots?5list?0?5regexp?5fo@
 	mov	edi, esp
 	call	DWORD PTR __imp____iob_func
 	cmp	edi, esp
@@ -1727,10 +1727,10 @@ $LN18@main:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 188  : 				fprintf(stderr, " Usage: -s [spots list, regexp format: \"(\\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+)( \\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+)*\"]\n");
+; 188  : 				fprintf(stderr, " Usage: -s spots list, regexp format: \"(\\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+)( \\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+)*\"\n");
 
 	mov	esi, esp
-	push	OFFSET ??_C@_0HA@MDGKCKGK@?5Usage?3?5?9s?5?$FLspots?5list?0?5regexp?5f@
+	push	OFFSET ??_C@_0GO@CFNIIOJA@?5Usage?3?5?9s?5spots?5list?0?5regexp?5fo@
 	mov	edi, esp
 	call	DWORD PTR __imp____iob_func
 	cmp	edi, esp

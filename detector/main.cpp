@@ -64,9 +64,9 @@ bool is_num(const char *str)
 int main(int argc, char *argv[])
 {
 #ifdef RUN_TESTS
-	TestClass tests;
-	tests.run();
-	system("pause");
+	//TestClass tests;
+	//tests.run();
+	//system("pause");
 	//return EXIT_SUCCESS;
 #endif
 	
@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
 		{
 			if (i + 1 >= argc || argv[i+1][0] == '-')
 			{
-				fprintf(stderr, " Usage: -a [camera address]\n");
+				fprintf(stderr, " Usage: -a camera address\n");
 				return EXIT_FAILURE_PAUSE;
 			}
 
@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
 		{
 			if (i + 1 >= argc || argv[i+1][0] == '-')
 			{
-				fprintf(stderr, " Usage: -t [camera type]\n");
+				fprintf(stderr, " Usage: -t camera type\n");
 				return EXIT_FAILURE_PAUSE;
 			}
 
@@ -113,7 +113,7 @@ int main(int argc, char *argv[])
 		{
 			if (i + 1 >= argc || argv[i+1][0] == '-')
 			{
-				fprintf(stderr, " Usage: -o [output file]\n");
+				fprintf(stderr, " Usage: -o output file\n");
 				return EXIT_FAILURE_PAUSE;
 			}
 
@@ -123,7 +123,7 @@ int main(int argc, char *argv[])
 		{
 			if (i + 1 >= argc || argv[i+1][0] == '-')
 			{
-				fprintf(stderr, " Usage: -h [threshold high]\n");
+				fprintf(stderr, " Usage: -h threshold high\n");
 				return EXIT_FAILURE_PAUSE;
 			}
 
@@ -133,7 +133,7 @@ int main(int argc, char *argv[])
 		{
 			if (i + 1 >= argc || argv[i+1][0] == '-')
 			{
-				fprintf(stderr, " Usage: -l [threshold low]\n");
+				fprintf(stderr, " Usage: -l threshold low\n");
 				return EXIT_FAILURE_PAUSE;
 			}
 
@@ -143,7 +143,7 @@ int main(int argc, char *argv[])
 		{
 			if (i + 1 >= argc || argv[i+1][0] == '-')
 			{
-				fprintf(stderr, " Usage: -c [scale]\n");
+				fprintf(stderr, " Usage: -c scale\n");
 				return EXIT_FAILURE_PAUSE;
 			}
 
@@ -153,7 +153,7 @@ int main(int argc, char *argv[])
 		{
 			if (i + 1 >= argc || argv[i+1][0] == '-')
 			{
-				fprintf(stderr, " Usage: -n [threshold scan]\n");
+				fprintf(stderr, " Usage: -n threshold scan\n");
 				return EXIT_FAILURE_PAUSE;
 			}
 
@@ -163,7 +163,7 @@ int main(int argc, char *argv[])
 		{
 			if (i + 8 >= argc)
 			{
-				fprintf(stderr, " Usage: -s [spots list, regexp format: \"(\\d+ \\d+ \\d+ \\d+)( \\d+ \\d+ \\d+ \\d+)*\"]\n");
+				fprintf(stderr, " Usage: -s spots list, regexp format: \"(\\d+ \\d+ \\d+ \\d+)( \\d+ \\d+ \\d+ \\d+)*\"\n");
 				return EXIT_FAILURE_PAUSE;
 			}
 
@@ -185,7 +185,7 @@ int main(int argc, char *argv[])
 			if (numbers_count == 0 || numbers_count % 8 != 0)
 			{
 				fprintf(stderr, " Error: spots list length must be divisible by 8\n");
-				fprintf(stderr, " Usage: -s [spots list, regexp format: \"(\\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+)( \\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+)*\"]\n");
+				fprintf(stderr, " Usage: -s spots list, regexp format: \"(\\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+)( \\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+ \\d+)*\"\n");
 				return EXIT_FAILURE_PAUSE;
 			}
 
