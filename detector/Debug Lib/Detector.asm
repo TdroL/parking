@@ -500,13 +500,13 @@ __ehfuncinfo$?loadImage@Detector@@QAE_NABV?$basic_string@DU?$char_traits@D@std@@
 xdata$x	ENDS
 ;	COMDAT ?loadImage@Detector@@QAE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@NNN@Z
 _TEXT	SEGMENT
-$T160482 = -425						; size = 1
-$T160483 = -416						; size = 4
-$T160484 = -404						; size = 20
-$T160485 = -376						; size = 20
-$T160486 = -348						; size = 20
-$T160487 = -320						; size = 20
-$T160488 = -289						; size = 1
+$T160471 = -425						; size = 1
+$T160472 = -416						; size = 4
+$T160473 = -404						; size = 20
+$T160474 = -376						; size = 20
+$T160475 = -348						; size = 20
+$T160476 = -320						; size = 20
+$T160477 = -289						; size = 1
 _src$ = -88						; size = 56
 _this$ = -24						; size = 4
 __$ArrayPad$ = -16					; size = 4
@@ -565,11 +565,11 @@ _scale_$ = 28						; size = 8
 ; 11   : 	{
 ; 12   : 		return false;
 
-	mov	BYTE PTR $T160482[ebp], 0
+	mov	BYTE PTR $T160471[ebp], 0
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	lea	ecx, DWORD PTR _src$[ebp]
 	call	??1Mat@cv@@QAE@XZ			; cv::Mat::~Mat
-	mov	al, BYTE PTR $T160482[ebp]
+	mov	al, BYTE PTR $T160471[ebp]
 	jmp	$LN3@loadImage
 $LN2@loadImage:
 
@@ -597,11 +597,11 @@ $LN2@loadImage:
 
 	lea	eax, DWORD PTR _src$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR $T160484[ebp]
+	lea	ecx, DWORD PTR $T160473[ebp]
 	call	??0_OutputArray@cv@@QAE@AAVMat@1@@Z	; cv::_OutputArray::_OutputArray
 	lea	ecx, DWORD PTR _src$[ebp]
 	push	ecx
-	lea	ecx, DWORD PTR $T160485[ebp]
+	lea	ecx, DWORD PTR $T160474[ebp]
 	call	??0_InputArray@cv@@QAE@ABVMat@1@@Z	; cv::_InputArray::_InputArray
 	push	1
 	mov	edx, DWORD PTR _this$[ebp]
@@ -614,11 +614,11 @@ $LN2@loadImage:
 	fstp	QWORD PTR [esp]
 	sub	esp, 8
 	mov	ecx, esp
-	mov	DWORD PTR $T160483[ebp], esp
+	mov	DWORD PTR $T160472[ebp], esp
 	call	??0?$Size_@H@cv@@QAE@XZ			; cv::Size_<int>::Size_<int>
-	lea	ecx, DWORD PTR $T160484[ebp]
+	lea	ecx, DWORD PTR $T160473[ebp]
 	push	ecx
-	lea	edx, DWORD PTR $T160485[ebp]
+	lea	edx, DWORD PTR $T160474[ebp]
 	push	edx
 	call	?resize@cv@@YAXABV_InputArray@1@ABV_OutputArray@1@V?$Size_@H@1@NNH@Z ; cv::resize
 	add	esp, 36					; 00000024H
@@ -631,11 +631,11 @@ $LN1@loadImage:
 	mov	eax, DWORD PTR _this$[ebp]
 	add	eax, 8
 	push	eax
-	lea	ecx, DWORD PTR $T160486[ebp]
+	lea	ecx, DWORD PTR $T160475[ebp]
 	call	??0_OutputArray@cv@@QAE@AAVMat@1@@Z	; cv::_OutputArray::_OutputArray
 	lea	ecx, DWORD PTR _src$[ebp]
 	push	ecx
-	lea	ecx, DWORD PTR $T160487[ebp]
+	lea	ecx, DWORD PTR $T160476[ebp]
 	call	??0_InputArray@cv@@QAE@ABVMat@1@@Z	; cv::_InputArray::_InputArray
 	push	0
 	push	3
@@ -645,9 +645,9 @@ $LN1@loadImage:
 	sub	esp, 8
 	fld	QWORD PTR _threshold_low$[ebp]
 	fstp	QWORD PTR [esp]
-	lea	edx, DWORD PTR $T160486[ebp]
+	lea	edx, DWORD PTR $T160475[ebp]
 	push	edx
-	lea	eax, DWORD PTR $T160487[ebp]
+	lea	eax, DWORD PTR $T160476[ebp]
 	push	eax
 	call	?Canny@cv@@YAXABV_InputArray@1@ABV_OutputArray@1@NNH_N@Z ; cv::Canny
 	add	esp, 32					; 00000020H
@@ -659,11 +659,11 @@ $LN1@loadImage:
 	xor	ecx, ecx
 	cmp	DWORD PTR [eax+24], 0
 	setne	cl
-	mov	BYTE PTR $T160488[ebp], cl
+	mov	BYTE PTR $T160477[ebp], cl
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	lea	ecx, DWORD PTR _src$[ebp]
 	call	??1Mat@cv@@QAE@XZ			; cv::Mat::~Mat
-	mov	al, BYTE PTR $T160488[ebp]
+	mov	al, BYTE PTR $T160477[ebp]
 $LN3@loadImage:
 
 ; 25   : }
@@ -1237,21 +1237,18 @@ _status_$ = 8						; size = 4
 	ret	4
 ?setStatus@Spot@@QAEXW4SpotStatus@@@Z ENDP		; Spot::setStatus
 _TEXT	ENDS
-PUBLIC	??R<lambda0>@?A0x5b2b9422@@QBEHH@Z		; `anonymous namespace'::<lambda0>::operator()
 PUBLIC	?isPointInside@Detector@@QAE_NAAY03$$CBV?$Point_@H@cv@@II@Z ; Detector::isPointInside
 ; Function compile flags: /Odtp /RTCsu /ZI
 ; File c:\users\tdrol\documents\visual studio 2010\projects\parking\detector\detector.cpp
 ;	COMDAT ?isPointInside@Detector@@QAE_NAAY03$$CBV?$Point_@H@cv@@II@Z
 _TEXT	SEGMENT
-$T160526 = -305						; size = 1
-_side$140299 = -104					; size = 4
-_y1$140298 = -92					; size = 4
-_y0$140297 = -80					; size = 4
-_x1$140296 = -68					; size = 4
-_x0$140295 = -56					; size = 4
-_i$140291 = -44						; size = 4
-_last_side$ = -32					; size = 4
-_sgn$ = -17						; size = 1
+_side$140285 = -92					; size = 4
+_y1$140284 = -80					; size = 4
+_y0$140283 = -68					; size = 4
+_x1$140282 = -56					; size = 4
+_x0$140281 = -44					; size = 4
+_i$140277 = -32						; size = 4
+_last_side$ = -20					; size = 4
 _this$ = -8						; size = 4
 _corners$ = 8						; size = 4
 _x$ = 12						; size = 4
@@ -1259,244 +1256,166 @@ _y$ = 16						; size = 4
 ?isPointInside@Detector@@QAE_NAAY03$$CBV?$Point_@H@cv@@II@Z PROC ; Detector::isPointInside, COMDAT
 ; _this$ = ecx
 
-; 75   : {
+; 79   : {
 
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 312				; 00000138H
+	sub	esp, 288				; 00000120H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-312]
-	mov	ecx, 78					; 0000004eH
+	lea	edi, DWORD PTR [ebp-288]
+	mov	ecx, 72					; 00000048H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 76   : 	auto sgn = [] (int a) -> int
-; 77   : 	{
-; 78   : 		return (a > 0) ? 1 : ((a < 0) ? -1 : 0);
-; 79   : 	};
-
-	xor	eax, eax
-	mov	BYTE PTR $T160526[ebp], al
-
-; 80   : 	
-; 81   : 	// http://local.wasp.uwa.edu.au/~pbourke/geometry/insidepoly/
-; 82   : 	int last_side = 0;
+; 80   : 	// http://local.wasp.uwa.edu.au/~pbourke/geometry/insidepoly/
+; 81   : 	int last_side = 0;
 
 	mov	DWORD PTR _last_side$[ebp], 0
 
-; 83   : 
-; 84   : 	for (size_t i = 0; i < 4; i++)
+; 82   : 
+; 83   : 	for (size_t i = 0; i < 4; i++)
 
-	mov	DWORD PTR _i$140291[ebp], 0
+	mov	DWORD PTR _i$140277[ebp], 0
 	jmp	SHORT $LN5@isPointIns
 $LN4@isPointIns:
-	mov	eax, DWORD PTR _i$140291[ebp]
+	mov	eax, DWORD PTR _i$140277[ebp]
 	add	eax, 1
-	mov	DWORD PTR _i$140291[ebp], eax
+	mov	DWORD PTR _i$140277[ebp], eax
 $LN5@isPointIns:
-	cmp	DWORD PTR _i$140291[ebp], 4
+	cmp	DWORD PTR _i$140277[ebp], 4
 	jae	$LN3@isPointIns
 
-; 85   : 	{
-; 86   : 		int x0 = corners[(i + 0) % 4].x;
+; 84   : 	{
+; 85   : 		int x0 = corners[(i + 0) % 4].x;
 
-	mov	eax, DWORD PTR _i$140291[ebp]
+	mov	eax, DWORD PTR _i$140277[ebp]
 	xor	edx, edx
 	mov	ecx, 4
 	div	ecx
 	mov	eax, DWORD PTR _corners$[ebp]
 	mov	ecx, DWORD PTR [eax+edx*8]
-	mov	DWORD PTR _x0$140295[ebp], ecx
+	mov	DWORD PTR _x0$140281[ebp], ecx
 
-; 87   : 		int x1 = corners[(i + 1) % 4].x;
+; 86   : 		int x1 = corners[(i + 1) % 4].x;
 
-	mov	eax, DWORD PTR _i$140291[ebp]
+	mov	eax, DWORD PTR _i$140277[ebp]
 	add	eax, 1
 	xor	edx, edx
 	mov	ecx, 4
 	div	ecx
 	mov	eax, DWORD PTR _corners$[ebp]
 	mov	ecx, DWORD PTR [eax+edx*8]
-	mov	DWORD PTR _x1$140296[ebp], ecx
+	mov	DWORD PTR _x1$140282[ebp], ecx
 
-; 88   : 
-; 89   : 		int y0 = corners[(i + 0) % 4].y;
+; 87   : 
+; 88   : 		int y0 = corners[(i + 0) % 4].y;
 
-	mov	eax, DWORD PTR _i$140291[ebp]
+	mov	eax, DWORD PTR _i$140277[ebp]
 	xor	edx, edx
 	mov	ecx, 4
 	div	ecx
 	mov	eax, DWORD PTR _corners$[ebp]
 	mov	ecx, DWORD PTR [eax+edx*8+4]
-	mov	DWORD PTR _y0$140297[ebp], ecx
+	mov	DWORD PTR _y0$140283[ebp], ecx
 
-; 90   : 		int y1 = corners[(i + 1) % 4].y;
+; 89   : 		int y1 = corners[(i + 1) % 4].y;
 
-	mov	eax, DWORD PTR _i$140291[ebp]
+	mov	eax, DWORD PTR _i$140277[ebp]
 	add	eax, 1
 	xor	edx, edx
 	mov	ecx, 4
 	div	ecx
 	mov	eax, DWORD PTR _corners$[ebp]
 	mov	ecx, DWORD PTR [eax+edx*8+4]
-	mov	DWORD PTR _y1$140298[ebp], ecx
+	mov	DWORD PTR _y1$140284[ebp], ecx
 
-; 91   : 
-; 92   : 		int side = (y - y0) * (x1 - x0) - (x - x0) * (y1 - y0);
+; 90   : 
+; 91   : 		int side = (y - y0) * (x1 - x0) - (x - x0) * (y1 - y0);
 
 	mov	eax, DWORD PTR _y$[ebp]
-	sub	eax, DWORD PTR _y0$140297[ebp]
-	mov	ecx, DWORD PTR _x1$140296[ebp]
-	sub	ecx, DWORD PTR _x0$140295[ebp]
+	sub	eax, DWORD PTR _y0$140283[ebp]
+	mov	ecx, DWORD PTR _x1$140282[ebp]
+	sub	ecx, DWORD PTR _x0$140281[ebp]
 	imul	eax, ecx
 	mov	edx, DWORD PTR _x$[ebp]
-	sub	edx, DWORD PTR _x0$140295[ebp]
-	mov	ecx, DWORD PTR _y1$140298[ebp]
-	sub	ecx, DWORD PTR _y0$140297[ebp]
+	sub	edx, DWORD PTR _x0$140281[ebp]
+	mov	ecx, DWORD PTR _y1$140284[ebp]
+	sub	ecx, DWORD PTR _y0$140283[ebp]
 	imul	edx, ecx
 	sub	eax, edx
-	mov	DWORD PTR _side$140299[ebp], eax
+	mov	DWORD PTR _side$140285[ebp], eax
 
-; 93   : 
-; 94   : 		if (side == 0)
+; 92   : 
+; 93   : 		if (side == 0)
 
 	jne	SHORT $LN2@isPointIns
 
-; 95   : 		{
-; 96   : 			continue;
+; 94   : 		{
+; 95   : 			continue;
 
 	jmp	$LN4@isPointIns
 $LN2@isPointIns:
 
-; 97   : 		}
-; 98   : 
-; 99   : 		if (last_side != 0 && sgn(last_side) != sgn(side))
+; 96   : 		}
+; 97   : 
+; 98   : 		if (last_side != 0 && sgn(last_side) != sgn(side))
 
 	cmp	DWORD PTR _last_side$[ebp], 0
 	je	SHORT $LN1@isPointIns
 	mov	eax, DWORD PTR _last_side$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR _sgn$[ebp]
-	call	??R<lambda0>@?A0x5b2b9422@@QBEHH@Z	; `anonymous namespace'::<lambda0>::operator()
+	call	??$sgn@H@@YAHH@Z			; sgn<int>
+	add	esp, 4
 	mov	esi, eax
-	mov	ecx, DWORD PTR _side$140299[ebp]
+	mov	ecx, DWORD PTR _side$140285[ebp]
 	push	ecx
-	lea	ecx, DWORD PTR _sgn$[ebp]
-	call	??R<lambda0>@?A0x5b2b9422@@QBEHH@Z	; `anonymous namespace'::<lambda0>::operator()
+	call	??$sgn@H@@YAHH@Z			; sgn<int>
+	add	esp, 4
 	cmp	esi, eax
 	je	SHORT $LN1@isPointIns
 
-; 100  : 		{
-; 101  : 			return false;
+; 99   : 		{
+; 100  : 			return false;
 
 	xor	al, al
 	jmp	SHORT $LN6@isPointIns
 $LN1@isPointIns:
 
-; 102  : 		}
-; 103  : 
-; 104  : 		last_side = side;
+; 101  : 		}
+; 102  : 
+; 103  : 		last_side = side;
 
-	mov	eax, DWORD PTR _side$140299[ebp]
+	mov	eax, DWORD PTR _side$140285[ebp]
 	mov	DWORD PTR _last_side$[ebp], eax
 
-; 105  : 	}
+; 104  : 	}
 
 	jmp	$LN4@isPointIns
 $LN3@isPointIns:
 
-; 106  : 
-; 107  : 	return true;
+; 105  : 
+; 106  : 	return true;
 
 	mov	al, 1
 $LN6@isPointIns:
 
-; 108  : };
+; 107  : };
 
-	push	edx
-	mov	ecx, ebp
-	push	eax
-	lea	edx, DWORD PTR $LN10@isPointIns
-	call	@_RTC_CheckStackVars@8
-	pop	eax
-	pop	edx
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 312				; 00000138H
+	add	esp, 288				; 00000120H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
 	ret	12					; 0000000cH
-$LN10@isPointIns:
-	DD	1
-	DD	$LN9@isPointIns
-$LN9@isPointIns:
-	DD	-17					; ffffffefH
-	DD	1
-	DD	$LN8@isPointIns
-$LN8@isPointIns:
-	DB	115					; 00000073H
-	DB	103					; 00000067H
-	DB	110					; 0000006eH
-	DB	0
 ?isPointInside@Detector@@QAE_NAAY03$$CBV?$Point_@H@cv@@II@Z ENDP ; Detector::isPointInside
-; Function compile flags: /Odtp /RTCsu /ZI
-_TEXT	ENDS
-;	COMDAT ??R<lambda0>@?A0x5b2b9422@@QBEHH@Z
-_TEXT	SEGMENT
-tv67 = -208						; size = 4
-_this$ = -8						; size = 4
-_a$ = 8							; size = 4
-??R<lambda0>@?A0x5b2b9422@@QBEHH@Z PROC			; `anonymous namespace'::<lambda0>::operator(), COMDAT
-; _this$ = ecx
-
-; 77   : 	{
-
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 208				; 000000d0H
-	push	ebx
-	push	esi
-	push	edi
-	push	ecx
-	lea	edi, DWORD PTR [ebp-208]
-	mov	ecx, 52					; 00000034H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	pop	ecx
-	mov	DWORD PTR _this$[ebp], ecx
-
-; 78   : 		return (a > 0) ? 1 : ((a < 0) ? -1 : 0);
-
-	cmp	DWORD PTR _a$[ebp], 0
-	jle	SHORT $LN3@operator
-	mov	DWORD PTR tv67[ebp], 1
-	jmp	SHORT $LN4@operator
-$LN3@operator:
-	xor	eax, eax
-	cmp	DWORD PTR _a$[ebp], 0
-	setge	al
-	sub	eax, 1
-	mov	DWORD PTR tv67[ebp], eax
-$LN4@operator:
-	mov	eax, DWORD PTR tv67[ebp]
-
-; 79   : 	};
-
-	pop	edi
-	pop	esi
-	pop	ebx
-	mov	esp, ebp
-	pop	ebp
-	ret	4
-??R<lambda0>@?A0x5b2b9422@@QBEHH@Z ENDP			; `anonymous namespace'::<lambda0>::operator()
 _TEXT	ENDS
 PUBLIC	??0CountStats@@QAE@II@Z				; CountStats::CountStats
 PUBLIC	?ptr@Mat@cv@@QAEPAEHH@Z				; cv::Mat::ptr
@@ -1507,8 +1426,8 @@ PUBLIC	__$ArrayPad$
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?countPoints@Detector@@QAE?AUCountStats@@AAY03$$CBV?$Point_@H@cv@@@Z
 _TEXT	SEGMENT
-_y$140328 = -132					; size = 4
-_x$140324 = -120					; size = 4
+_y$140316 = -132					; size = 4
+_x$140312 = -120					; size = 4
 _scanned$ = -108					; size = 4
 _count$ = -96						; size = 4
 _rect$ = -84						; size = 16
@@ -1521,7 +1440,7 @@ _corners$ = 12						; size = 4
 ?countPoints@Detector@@QAE?AUCountStats@@AAY03$$CBV?$Point_@H@cv@@@Z PROC ; Detector::countPoints, COMDAT
 ; _this$ = ecx
 
-; 111  : {
+; 110  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -1540,7 +1459,7 @@ _corners$ = 12						; size = 4
 	mov	DWORD PTR __$ArrayPad$[ebp], eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 112  : 	unsigned int xs[4] = { corners[0].x, corners[1].x, corners[2].x, corners[3].x };
+; 111  : 	unsigned int xs[4] = { corners[0].x, corners[1].x, corners[2].x, corners[3].x };
 
 	mov	eax, DWORD PTR _corners$[ebp]
 	mov	ecx, DWORD PTR [eax]
@@ -1555,7 +1474,7 @@ _corners$ = 12						; size = 4
 	mov	ecx, DWORD PTR [eax+24]
 	mov	DWORD PTR _xs$[ebp+12], ecx
 
-; 113  : 	unsigned int ys[4] = { corners[0].y, corners[1].y, corners[2].y, corners[3].y };
+; 112  : 	unsigned int ys[4] = { corners[0].y, corners[1].y, corners[2].y, corners[3].y };
 
 	mov	eax, DWORD PTR _corners$[ebp]
 	mov	ecx, DWORD PTR [eax+4]
@@ -1570,13 +1489,13 @@ _corners$ = 12						; size = 4
 	mov	ecx, DWORD PTR [eax+28]
 	mov	DWORD PTR _ys$[ebp+12], ecx
 
-; 114  : 
-; 115  : 	cv::Rect rect;
+; 113  : 
+; 114  : 	cv::Rect rect;
 
 	lea	ecx, DWORD PTR _rect$[ebp]
 	call	??0?$Rect_@H@cv@@QAE@XZ			; cv::Rect_<int>::Rect_<int>
 
-; 116  : 	rect.x      = *std::min_element(xs, xs + 4);
+; 115  : 	rect.x      = *std::min_element(xs, xs + 4);
 
 	lea	eax, DWORD PTR _xs$[ebp+16]
 	push	eax
@@ -1587,7 +1506,7 @@ _corners$ = 12						; size = 4
 	mov	edx, DWORD PTR [eax]
 	mov	DWORD PTR _rect$[ebp], edx
 
-; 117  : 	rect.width  = *std::max_element(xs, xs + 4);
+; 116  : 	rect.width  = *std::max_element(xs, xs + 4);
 
 	lea	eax, DWORD PTR _xs$[ebp+16]
 	push	eax
@@ -1598,7 +1517,7 @@ _corners$ = 12						; size = 4
 	mov	edx, DWORD PTR [eax]
 	mov	DWORD PTR _rect$[ebp+8], edx
 
-; 118  : 	rect.y      = *std::min_element(ys, ys + 4);
+; 117  : 	rect.y      = *std::min_element(ys, ys + 4);
 
 	lea	eax, DWORD PTR _ys$[ebp+16]
 	push	eax
@@ -1609,7 +1528,7 @@ _corners$ = 12						; size = 4
 	mov	edx, DWORD PTR [eax]
 	mov	DWORD PTR _rect$[ebp+4], edx
 
-; 119  : 	rect.height = *std::max_element(ys, ys + 4);
+; 118  : 	rect.height = *std::max_element(ys, ys + 4);
 
 	lea	eax, DWORD PTR _ys$[ebp+16]
 	push	eax
@@ -1620,51 +1539,51 @@ _corners$ = 12						; size = 4
 	mov	edx, DWORD PTR [eax]
 	mov	DWORD PTR _rect$[ebp+12], edx
 
-; 120  : 
-; 121  : 	unsigned int count = 0;
+; 119  : 
+; 120  : 	unsigned int count = 0;
 
 	mov	DWORD PTR _count$[ebp], 0
 
-; 122  : 	unsigned int scanned = 0;
+; 121  : 	unsigned int scanned = 0;
 
 	mov	DWORD PTR _scanned$[ebp], 0
 
-; 123  : 
-; 124  : 	for (int x = rect.x; x < rect.width; x++)
+; 122  : 
+; 123  : 	for (int x = rect.x; x < rect.width; x++)
 
 	mov	eax, DWORD PTR _rect$[ebp]
-	mov	DWORD PTR _x$140324[ebp], eax
+	mov	DWORD PTR _x$140312[ebp], eax
 	jmp	SHORT $LN8@countPoint
 $LN7@countPoint:
-	mov	eax, DWORD PTR _x$140324[ebp]
+	mov	eax, DWORD PTR _x$140312[ebp]
 	add	eax, 1
-	mov	DWORD PTR _x$140324[ebp], eax
+	mov	DWORD PTR _x$140312[ebp], eax
 $LN8@countPoint:
-	mov	eax, DWORD PTR _x$140324[ebp]
+	mov	eax, DWORD PTR _x$140312[ebp]
 	cmp	eax, DWORD PTR _rect$[ebp+8]
 	jge	SHORT $LN6@countPoint
 
-; 125  : 	{
-; 126  : 		for (int y = rect.y; y < rect.height; y++)
+; 124  : 	{
+; 125  : 		for (int y = rect.y; y < rect.height; y++)
 
 	mov	eax, DWORD PTR _rect$[ebp+4]
-	mov	DWORD PTR _y$140328[ebp], eax
+	mov	DWORD PTR _y$140316[ebp], eax
 	jmp	SHORT $LN5@countPoint
 $LN4@countPoint:
-	mov	eax, DWORD PTR _y$140328[ebp]
+	mov	eax, DWORD PTR _y$140316[ebp]
 	add	eax, 1
-	mov	DWORD PTR _y$140328[ebp], eax
+	mov	DWORD PTR _y$140316[ebp], eax
 $LN5@countPoint:
-	mov	eax, DWORD PTR _y$140328[ebp]
+	mov	eax, DWORD PTR _y$140316[ebp]
 	cmp	eax, DWORD PTR _rect$[ebp+12]
 	jge	SHORT $LN3@countPoint
 
-; 127  : 		{
-; 128  : 			if (isPointInside(corners, x, y))
+; 126  : 		{
+; 127  : 			if (isPointInside(corners, x, y))
 
-	mov	eax, DWORD PTR _y$140328[ebp]
+	mov	eax, DWORD PTR _y$140316[ebp]
 	push	eax
-	mov	ecx, DWORD PTR _x$140324[ebp]
+	mov	ecx, DWORD PTR _x$140312[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _corners$[ebp]
 	push	edx
@@ -1674,19 +1593,19 @@ $LN5@countPoint:
 	test	eax, eax
 	je	SHORT $LN2@countPoint
 
-; 129  : 			{
-; 130  : 				scanned++;
+; 128  : 			{
+; 129  : 				scanned++;
 
 	mov	eax, DWORD PTR _scanned$[ebp]
 	add	eax, 1
 	mov	DWORD PTR _scanned$[ebp], eax
 
-; 131  : 
-; 132  : 				if (*img.ptr(y, x) == (uchar) 0xff)
+; 130  : 
+; 131  : 				if (*img.ptr(y, x) == (uchar) 0xff)
 
-	mov	eax, DWORD PTR _x$140324[ebp]
+	mov	eax, DWORD PTR _x$140312[ebp]
 	push	eax
-	mov	ecx, DWORD PTR _y$140328[ebp]
+	mov	ecx, DWORD PTR _y$140316[ebp]
 	push	ecx
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 8
@@ -1695,28 +1614,28 @@ $LN5@countPoint:
 	cmp	edx, 255				; 000000ffH
 	jne	SHORT $LN2@countPoint
 
-; 133  : 				{
-; 134  : 					count++;
+; 132  : 				{
+; 133  : 					count++;
 
 	mov	eax, DWORD PTR _count$[ebp]
 	add	eax, 1
 	mov	DWORD PTR _count$[ebp], eax
 $LN2@countPoint:
 
-; 135  : 				}
-; 136  : 			}
-; 137  : 		}
+; 134  : 				}
+; 135  : 			}
+; 136  : 		}
 
 	jmp	SHORT $LN4@countPoint
 $LN3@countPoint:
 
-; 138  : 	}
+; 137  : 	}
 
 	jmp	$LN7@countPoint
 $LN6@countPoint:
 
-; 139  : 
-; 140  : 	return CountStats(count, scanned);
+; 138  : 
+; 139  : 	return CountStats(count, scanned);
 
 	mov	eax, DWORD PTR _scanned$[ebp]
 	push	eax
@@ -1726,7 +1645,7 @@ $LN6@countPoint:
 	call	??0CountStats@@QAE@II@Z			; CountStats::CountStats
 	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
 
-; 141  : }
+; 140  : }
 
 	push	edx
 	mov	ecx, ebp
@@ -2068,11 +1987,11 @@ __ehfuncinfo$?displayGrid@Detector@@QAEXAAV?$vector@PAUSpot@@V?$allocator@PAUSpo
 xdata$x	ENDS
 ;	COMDAT ?displayGrid@Detector@@QAEXAAV?$vector@PAUSpot@@V?$allocator@PAUSpot@@@std@@@std@@@Z
 _TEXT	SEGMENT
-$T140348 = -444						; size = 32
-$T140351 = -404						; size = 32
-$T160560 = -364						; size = 20
-$T160561 = -336						; size = 20
-$T160562 = -308						; size = 20
+$T140336 = -444						; size = 32
+$T140339 = -404						; size = 32
+$T160541 = -364						; size = 20
+$T160542 = -336						; size = 20
+$T160543 = -308						; size = 20
 _dst$ = -88						; size = 56
 _this$ = -24						; size = 4
 __$ArrayPad$ = -16					; size = 4
@@ -2081,7 +2000,7 @@ _spots$ = 8						; size = 4
 ?displayGrid@Detector@@QAEXAAV?$vector@PAUSpot@@V?$allocator@PAUSpot@@@std@@@std@@@Z PROC ; Detector::displayGrid, COMDAT
 ; _this$ = ecx
 
-; 144  : {
+; 143  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -2107,34 +2026,34 @@ _spots$ = 8						; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 145  : 	cv::Mat dst;
+; 144  : 	cv::Mat dst;
 
 	lea	ecx, DWORD PTR _dst$[ebp]
 	call	??0Mat@cv@@QAE@XZ			; cv::Mat::Mat
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 
-; 146  : 	cvtColor(img, dst, CV_GRAY2RGB);
+; 145  : 	cvtColor(img, dst, CV_GRAY2RGB);
 
 	lea	eax, DWORD PTR _dst$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR $T160560[ebp]
+	lea	ecx, DWORD PTR $T160541[ebp]
 	call	??0_OutputArray@cv@@QAE@AAVMat@1@@Z	; cv::_OutputArray::_OutputArray
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 8
 	push	ecx
-	lea	ecx, DWORD PTR $T160561[ebp]
+	lea	ecx, DWORD PTR $T160542[ebp]
 	call	??0_InputArray@cv@@QAE@ABVMat@1@@Z	; cv::_InputArray::_InputArray
 	push	0
 	push	8
-	lea	edx, DWORD PTR $T160560[ebp]
+	lea	edx, DWORD PTR $T160541[ebp]
 	push	edx
-	lea	eax, DWORD PTR $T160561[ebp]
+	lea	eax, DWORD PTR $T160542[ebp]
 	push	eax
 	call	?cvtColor@cv@@YAXABV_InputArray@1@ABV_OutputArray@1@HH@Z ; cv::cvtColor
 	add	esp, 16					; 00000010H
 
-; 147  : 
-; 148  : 	drawGrid(dst, spots);
+; 146  : 
+; 147  : 	drawGrid(dst, spots);
 
 	mov	eax, DWORD PTR _spots$[ebp]
 	push	eax
@@ -2143,50 +2062,50 @@ _spots$ = 8						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?drawGrid@Detector@@QAEXAAVMat@cv@@AAV?$vector@PAUSpot@@V?$allocator@PAUSpot@@@std@@@std@@@Z ; Detector::drawGrid
 
-; 149  : 
-; 150  : 	cv::namedWindow("Source Canny", 1);
+; 148  : 
+; 149  : 	cv::namedWindow("Source Canny", 1);
 
 	push	OFFSET ??_C@_0N@BLEPBCBH@Source?5Canny?$AA@
-	lea	ecx, DWORD PTR $T140348[ebp]
+	lea	ecx, DWORD PTR $T140336[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 1
 	push	1
-	lea	eax, DWORD PTR $T140348[ebp]
+	lea	eax, DWORD PTR $T140336[ebp]
 	push	eax
 	call	?namedWindow@cv@@YAXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z ; cv::namedWindow
 	add	esp, 8
 	mov	BYTE PTR __$EHRec$[ebp+8], 0
-	lea	ecx, DWORD PTR $T140348[ebp]
+	lea	ecx, DWORD PTR $T140336[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 151  :     cv::imshow("Source Canny", dst);
+; 150  :     cv::imshow("Source Canny", dst);
 
 	lea	eax, DWORD PTR _dst$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR $T160562[ebp]
+	lea	ecx, DWORD PTR $T160543[ebp]
 	call	??0_InputArray@cv@@QAE@ABVMat@1@@Z	; cv::_InputArray::_InputArray
 	push	OFFSET ??_C@_0N@BLEPBCBH@Source?5Canny?$AA@
-	lea	ecx, DWORD PTR $T140351[ebp]
+	lea	ecx, DWORD PTR $T140339[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 2
-	lea	ecx, DWORD PTR $T160562[ebp]
+	lea	ecx, DWORD PTR $T160543[ebp]
 	push	ecx
-	lea	edx, DWORD PTR $T140351[ebp]
+	lea	edx, DWORD PTR $T140339[ebp]
 	push	edx
 	call	?imshow@cv@@YAXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV_InputArray@1@@Z ; cv::imshow
 	add	esp, 8
 	mov	BYTE PTR __$EHRec$[ebp+8], 0
-	lea	ecx, DWORD PTR $T140351[ebp]
+	lea	ecx, DWORD PTR $T140339[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 152  : 
-; 153  : 	cv::waitKey(0);
+; 151  : 
+; 152  : 	cv::waitKey(0);
 
 	push	0
 	call	?waitKey@cv@@YAHH@Z			; cv::waitKey
 	add	esp, 4
 
-; 154  : }
+; 153  : }
 
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	lea	ecx, DWORD PTR _dst$[ebp]
@@ -2232,10 +2151,10 @@ __unwindfunclet$?displayGrid@Detector@@QAEXAAV?$vector@PAUSpot@@V?$allocator@PAU
 	lea	ecx, DWORD PTR _dst$[ebp]
 	jmp	??1Mat@cv@@QAE@XZ			; cv::Mat::~Mat
 __unwindfunclet$?displayGrid@Detector@@QAEXAAV?$vector@PAUSpot@@V?$allocator@PAUSpot@@@std@@@std@@@Z$1:
-	lea	ecx, DWORD PTR $T140348[ebp]
+	lea	ecx, DWORD PTR $T140336[ebp]
 	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 __unwindfunclet$?displayGrid@Detector@@QAEXAAV?$vector@PAUSpot@@V?$allocator@PAUSpot@@@std@@@std@@@Z$2:
-	lea	ecx, DWORD PTR $T140351[ebp]
+	lea	ecx, DWORD PTR $T140339[ebp]
 	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 __ehhandler$?displayGrid@Detector@@QAEXAAV?$vector@PAUSpot@@V?$allocator@PAUSpot@@@std@@@std@@@Z:
 	mov	edx, DWORD PTR [esp+8]
@@ -2395,8 +2314,8 @@ _this$ = -8						; size = 4
 	ret	0
 ??0MStep@Mat@cv@@QAE@XZ ENDP				; cv::Mat::MStep::MStep
 _TEXT	ENDS
-PUBLIC	??R<lambda1>@?A0x5b2b9422@@QBEXQAV?$Point_@H@cv@@AAV?$Scalar_@N@3@@Z ; `anonymous namespace'::<lambda1>::operator()
-PUBLIC	??0<lambda1>@?A0x5b2b9422@@QAE@AAVMat@cv@@@Z	; `anonymous namespace'::<lambda1>::<lambda1>
+PUBLIC	??R<lambda0>@?A0x5b2b9422@@QBEXQAV?$Point_@H@cv@@AAV?$Scalar_@N@3@@Z ; `anonymous namespace'::<lambda0>::operator()
+PUBLIC	??0<lambda0>@?A0x5b2b9422@@QAE@AAVMat@cv@@@Z	; `anonymous namespace'::<lambda0>::<lambda0>
 PUBLIC	__real@4060000000000000
 PUBLIC	??0?$Scalar_@N@cv@@QAE@NNNN@Z			; cv::Scalar_<double>::Scalar_<double>
 PUBLIC	__real@406fe00000000000
@@ -2419,10 +2338,10 @@ CONST	ENDS
 ;	COMDAT ?drawGrid@Detector@@QAEXAAVMat@cv@@AAV?$vector@PAUSpot@@V?$allocator@PAUSpot@@@std@@@std@@@Z
 _TEXT	SEGMENT
 tv140 = -420						; size = 4
-_corners$140395 = -220					; size = 32
-_spot$140394 = -180					; size = 4
-_l$140390 = -168					; size = 4
-_i$140389 = -156					; size = 4
+_corners$140383 = -220					; size = 32
+_spot$140382 = -180					; size = 4
+_l$140378 = -168					; size = 4
+_i$140377 = -156					; size = 4
 _draw_rect$ = -144					; size = 4
 _color_blocked$ = -132					; size = 32
 _color_occupied$ = -92					; size = 32
@@ -2434,7 +2353,7 @@ _spots$ = 12						; size = 4
 ?drawGrid@Detector@@QAEXAAVMat@cv@@AAV?$vector@PAUSpot@@V?$allocator@PAUSpot@@@std@@@std@@@Z PROC ; Detector::drawGrid, COMDAT
 ; _this$ = ecx
 
-; 157  : {
+; 156  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -2453,7 +2372,7 @@ _spots$ = 12						; size = 4
 	mov	DWORD PTR __$ArrayPad$[ebp], eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 158  : 	cv::Scalar color_free(0, 255, 0);
+; 157  : 	cv::Scalar color_free(0, 255, 0);
 
 	sub	esp, 8
 	fldz
@@ -2470,7 +2389,7 @@ _spots$ = 12						; size = 4
 	lea	ecx, DWORD PTR _color_free$[ebp]
 	call	??0?$Scalar_@N@cv@@QAE@NNNN@Z		; cv::Scalar_<double>::Scalar_<double>
 
-; 159  : 	cv::Scalar color_occupied(0, 128, 255);
+; 158  : 	cv::Scalar color_occupied(0, 128, 255);
 
 	sub	esp, 8
 	fldz
@@ -2487,7 +2406,7 @@ _spots$ = 12						; size = 4
 	lea	ecx, DWORD PTR _color_occupied$[ebp]
 	call	??0?$Scalar_@N@cv@@QAE@NNNN@Z		; cv::Scalar_<double>::Scalar_<double>
 
-; 160  : 	cv::Scalar color_blocked(0, 0, 255);
+; 159  : 	cv::Scalar color_blocked(0, 0, 255);
 
 	sub	esp, 8
 	fldz
@@ -2504,84 +2423,84 @@ _spots$ = 12						; size = 4
 	lea	ecx, DWORD PTR _color_blocked$[ebp]
 	call	??0?$Scalar_@N@cv@@QAE@NNNN@Z		; cv::Scalar_<double>::Scalar_<double>
 
-; 161  : 
-; 162  : 	auto draw_rect = [&img] (cv::Point corners[4], cv::Scalar &color)
-; 163  : 	{
-; 164  : 		cv::line(img, corners[0], corners[1], color, 2, CV_AA);
-; 165  : 		cv::line(img, corners[1], corners[2], color, 2, CV_AA);
-; 166  : 		cv::line(img, corners[2], corners[3], color, 2, CV_AA);
-; 167  : 		cv::line(img, corners[3], corners[0], color, 2, CV_AA);
-; 168  : 	};
+; 160  : 
+; 161  : 	auto draw_rect = [&img] (cv::Point corners[4], cv::Scalar &color)
+; 162  : 	{
+; 163  : 		cv::line(img, corners[0], corners[1], color, 2, CV_AA);
+; 164  : 		cv::line(img, corners[1], corners[2], color, 2, CV_AA);
+; 165  : 		cv::line(img, corners[2], corners[3], color, 2, CV_AA);
+; 166  : 		cv::line(img, corners[3], corners[0], color, 2, CV_AA);
+; 167  : 	};
 
 	mov	eax, DWORD PTR _img$[ebp]
 	push	eax
 	lea	ecx, DWORD PTR _draw_rect$[ebp]
-	call	??0<lambda1>@?A0x5b2b9422@@QAE@AAVMat@cv@@@Z ; `anonymous namespace'::<lambda1>::<lambda1>
+	call	??0<lambda0>@?A0x5b2b9422@@QAE@AAVMat@cv@@@Z ; `anonymous namespace'::<lambda0>::<lambda0>
 
-; 169  : 
-; 170  : 	for (size_t i = 0, l = spots.size(); i < l; i++)
+; 168  : 
+; 169  : 	for (size_t i = 0, l = spots.size(); i < l; i++)
 
-	mov	DWORD PTR _i$140389[ebp], 0
+	mov	DWORD PTR _i$140377[ebp], 0
 	mov	ecx, DWORD PTR _spots$[ebp]
 	call	?size@?$vector@PAUSpot@@V?$allocator@PAUSpot@@@std@@@std@@QBEIXZ ; std::vector<Spot *,std::allocator<Spot *> >::size
-	mov	DWORD PTR _l$140390[ebp], eax
+	mov	DWORD PTR _l$140378[ebp], eax
 	jmp	SHORT $LN9@drawGrid
 $LN8@drawGrid:
-	mov	eax, DWORD PTR _i$140389[ebp]
+	mov	eax, DWORD PTR _i$140377[ebp]
 	add	eax, 1
-	mov	DWORD PTR _i$140389[ebp], eax
+	mov	DWORD PTR _i$140377[ebp], eax
 $LN9@drawGrid:
-	mov	eax, DWORD PTR _i$140389[ebp]
-	cmp	eax, DWORD PTR _l$140390[ebp]
+	mov	eax, DWORD PTR _i$140377[ebp]
+	cmp	eax, DWORD PTR _l$140378[ebp]
 	jae	$LN7@drawGrid
 
-; 171  : 	{
-; 172  : 		Spot &spot = *spots[i];
+; 170  : 	{
+; 171  : 		Spot &spot = *spots[i];
 
-	mov	eax, DWORD PTR _i$140389[ebp]
+	mov	eax, DWORD PTR _i$140377[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _spots$[ebp]
 	call	??A?$vector@PAUSpot@@V?$allocator@PAUSpot@@@std@@@std@@QAEAAPAUSpot@@I@Z ; std::vector<Spot *,std::allocator<Spot *> >::operator[]
 	mov	ecx, DWORD PTR [eax]
-	mov	DWORD PTR _spot$140394[ebp], ecx
+	mov	DWORD PTR _spot$140382[ebp], ecx
 
-; 173  : 
-; 174  : 		cv::Point corners[4] = {
-; 175  : 			spot.corners[0],
+; 172  : 
+; 173  : 		cv::Point corners[4] = {
+; 174  : 			spot.corners[0],
 
-	mov	eax, DWORD PTR _spot$140394[ebp]
+	mov	eax, DWORD PTR _spot$140382[ebp]
 	add	eax, 4
 	push	eax
-	lea	ecx, DWORD PTR _corners$140395[ebp]
+	lea	ecx, DWORD PTR _corners$140383[ebp]
 	call	??0?$Point_@H@cv@@QAE@ABV01@@Z		; cv::Point_<int>::Point_<int>
 
-; 176  : 			spot.corners[1],
+; 175  : 			spot.corners[1],
 
-	mov	eax, DWORD PTR _spot$140394[ebp]
+	mov	eax, DWORD PTR _spot$140382[ebp]
 	add	eax, 12					; 0000000cH
 	push	eax
-	lea	ecx, DWORD PTR _corners$140395[ebp+8]
+	lea	ecx, DWORD PTR _corners$140383[ebp+8]
 	call	??0?$Point_@H@cv@@QAE@ABV01@@Z		; cv::Point_<int>::Point_<int>
 
-; 177  : 			spot.corners[2],
+; 176  : 			spot.corners[2],
 
-	mov	eax, DWORD PTR _spot$140394[ebp]
+	mov	eax, DWORD PTR _spot$140382[ebp]
 	add	eax, 20					; 00000014H
 	push	eax
-	lea	ecx, DWORD PTR _corners$140395[ebp+16]
+	lea	ecx, DWORD PTR _corners$140383[ebp+16]
 	call	??0?$Point_@H@cv@@QAE@ABV01@@Z		; cv::Point_<int>::Point_<int>
 
-; 178  : 			spot.corners[3],
+; 177  : 			spot.corners[3],
 
-	mov	eax, DWORD PTR _spot$140394[ebp]
+	mov	eax, DWORD PTR _spot$140382[ebp]
 	add	eax, 28					; 0000001cH
 	push	eax
-	lea	ecx, DWORD PTR _corners$140395[ebp+24]
+	lea	ecx, DWORD PTR _corners$140383[ebp+24]
 	call	??0?$Point_@H@cv@@QAE@ABV01@@Z		; cv::Point_<int>::Point_<int>
 
-; 179  : 		};
-; 180  : 
-; 181  : 		if (scale != 1.0)
+; 178  : 		};
+; 179  : 
+; 180  : 		if (scale != 1.0)
 
 	mov	eax, DWORD PTR _this$[ebp]
 	fld	QWORD PTR [eax]
@@ -2591,20 +2510,20 @@ $LN9@drawGrid:
 	test	ah, 68					; 00000044H
 	jnp	SHORT $LN6@drawGrid
 
-; 182  : 		{
-; 183  : 			scalePoints(corners);
+; 181  : 		{
+; 182  : 			scalePoints(corners);
 
-	lea	eax, DWORD PTR _corners$140395[ebp]
+	lea	eax, DWORD PTR _corners$140383[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?scalePoints@Detector@@QAEXAAY03V?$Point_@H@cv@@@Z ; Detector::scalePoints
 $LN6@drawGrid:
 
-; 184  : 		}
-; 185  : 
-; 186  : 		switch (spot.status)
+; 183  : 		}
+; 184  : 
+; 185  : 		switch (spot.status)
 
-	mov	eax, DWORD PTR _spot$140394[ebp]
+	mov	eax, DWORD PTR _spot$140382[ebp]
 	mov	ecx, DWORD PTR [eax+36]
 	mov	DWORD PTR tv140[ebp], ecx
 	cmp	DWORD PTR tv140[ebp], 0
@@ -2616,56 +2535,56 @@ $LN6@drawGrid:
 	jmp	SHORT $LN4@drawGrid
 $LN3@drawGrid:
 
-; 187  : 		{
-; 188  : 		case Free:
-; 189  : 			draw_rect(corners, color_free);
+; 186  : 		{
+; 187  : 		case Free:
+; 188  : 			draw_rect(corners, color_free);
 
 	lea	eax, DWORD PTR _color_free$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR _corners$140395[ebp]
+	lea	ecx, DWORD PTR _corners$140383[ebp]
 	push	ecx
 	lea	ecx, DWORD PTR _draw_rect$[ebp]
-	call	??R<lambda1>@?A0x5b2b9422@@QBEXQAV?$Point_@H@cv@@AAV?$Scalar_@N@3@@Z ; `anonymous namespace'::<lambda1>::operator()
+	call	??R<lambda0>@?A0x5b2b9422@@QBEXQAV?$Point_@H@cv@@AAV?$Scalar_@N@3@@Z ; `anonymous namespace'::<lambda0>::operator()
 
-; 190  : 			break;
+; 189  : 			break;
 
 	jmp	SHORT $LN4@drawGrid
 $LN2@drawGrid:
 
-; 191  : 		case Occupied:
-; 192  : 			draw_rect(corners, color_occupied);
+; 190  : 		case Occupied:
+; 191  : 			draw_rect(corners, color_occupied);
 
 	lea	eax, DWORD PTR _color_occupied$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR _corners$140395[ebp]
+	lea	ecx, DWORD PTR _corners$140383[ebp]
 	push	ecx
 	lea	ecx, DWORD PTR _draw_rect$[ebp]
-	call	??R<lambda1>@?A0x5b2b9422@@QBEXQAV?$Point_@H@cv@@AAV?$Scalar_@N@3@@Z ; `anonymous namespace'::<lambda1>::operator()
+	call	??R<lambda0>@?A0x5b2b9422@@QBEXQAV?$Point_@H@cv@@AAV?$Scalar_@N@3@@Z ; `anonymous namespace'::<lambda0>::operator()
 
-; 193  : 			break;
+; 192  : 			break;
 
 	jmp	SHORT $LN4@drawGrid
 $LN1@drawGrid:
 
-; 194  : 		case Blocked:
-; 195  : 			draw_rect(corners, color_blocked);
+; 193  : 		case Blocked:
+; 194  : 			draw_rect(corners, color_blocked);
 
 	lea	eax, DWORD PTR _color_blocked$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR _corners$140395[ebp]
+	lea	ecx, DWORD PTR _corners$140383[ebp]
 	push	ecx
 	lea	ecx, DWORD PTR _draw_rect$[ebp]
-	call	??R<lambda1>@?A0x5b2b9422@@QBEXQAV?$Point_@H@cv@@AAV?$Scalar_@N@3@@Z ; `anonymous namespace'::<lambda1>::operator()
+	call	??R<lambda0>@?A0x5b2b9422@@QBEXQAV?$Point_@H@cv@@AAV?$Scalar_@N@3@@Z ; `anonymous namespace'::<lambda0>::operator()
 $LN4@drawGrid:
 
-; 196  : 			break;
-; 197  : 		}
-; 198  : 	}
+; 195  : 			break;
+; 196  : 		}
+; 197  : 	}
 
 	jmp	$LN8@drawGrid
 $LN7@drawGrid:
 
-; 199  : }
+; 198  : }
 
 	push	edx
 	mov	ecx, ebp
@@ -2772,14 +2691,14 @@ $LN12@drawGrid:
 ?drawGrid@Detector@@QAEXAAVMat@cv@@AAV?$vector@PAUSpot@@V?$allocator@PAUSpot@@@std@@@std@@@Z ENDP ; Detector::drawGrid
 ; Function compile flags: /Odtp /RTCsu /ZI
 _TEXT	ENDS
-;	COMDAT ??0<lambda1>@?A0x5b2b9422@@QAE@AAVMat@cv@@@Z
+;	COMDAT ??0<lambda0>@?A0x5b2b9422@@QAE@AAVMat@cv@@@Z
 _TEXT	SEGMENT
 _this$ = -8						; size = 4
 __Img$ = 8						; size = 4
-??0<lambda1>@?A0x5b2b9422@@QAE@AAVMat@cv@@@Z PROC	; `anonymous namespace'::<lambda1>::<lambda1>, COMDAT
+??0<lambda0>@?A0x5b2b9422@@QAE@AAVMat@cv@@@Z PROC	; `anonymous namespace'::<lambda0>::<lambda0>, COMDAT
 ; _this$ = ecx
 
-; 168  : 	};
+; 167  : 	};
 
 	push	ebp
 	mov	ebp, esp
@@ -2804,19 +2723,19 @@ __Img$ = 8						; size = 4
 	mov	esp, ebp
 	pop	ebp
 	ret	4
-??0<lambda1>@?A0x5b2b9422@@QAE@AAVMat@cv@@@Z ENDP	; `anonymous namespace'::<lambda1>::<lambda1>
+??0<lambda0>@?A0x5b2b9422@@QAE@AAVMat@cv@@@Z ENDP	; `anonymous namespace'::<lambda0>::<lambda0>
 _TEXT	ENDS
 EXTRN	?line@cv@@YAXAAVMat@1@V?$Point_@H@1@1ABV?$Scalar_@N@1@HHH@Z:PROC ; cv::line
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??R<lambda1>@?A0x5b2b9422@@QBEXQAV?$Point_@H@cv@@AAV?$Scalar_@N@3@@Z
+;	COMDAT ??R<lambda0>@?A0x5b2b9422@@QBEXQAV?$Point_@H@cv@@AAV?$Scalar_@N@3@@Z
 _TEXT	SEGMENT
 _this$ = -8						; size = 4
 _corners$ = 8						; size = 4
 _color$ = 12						; size = 4
-??R<lambda1>@?A0x5b2b9422@@QBEXQAV?$Point_@H@cv@@AAV?$Scalar_@N@3@@Z PROC ; `anonymous namespace'::<lambda1>::operator(), COMDAT
+??R<lambda0>@?A0x5b2b9422@@QBEXQAV?$Point_@H@cv@@AAV?$Scalar_@N@3@@Z PROC ; `anonymous namespace'::<lambda0>::operator(), COMDAT
 ; _this$ = ecx
 
-; 163  : 	{
+; 162  : 	{
 
 	push	ebp
 	mov	ebp, esp
@@ -2832,7 +2751,7 @@ _color$ = 12						; size = 4
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 164  : 		cv::line(img, corners[0], corners[1], color, 2, CV_AA);
+; 163  : 		cv::line(img, corners[0], corners[1], color, 2, CV_AA);
 
 	push	0
 	push	16					; 00000010H
@@ -2857,7 +2776,7 @@ _color$ = 12						; size = 4
 	call	?line@cv@@YAXAAVMat@1@V?$Point_@H@1@1ABV?$Scalar_@N@1@HHH@Z ; cv::line
 	add	esp, 36					; 00000024H
 
-; 165  : 		cv::line(img, corners[1], corners[2], color, 2, CV_AA);
+; 164  : 		cv::line(img, corners[1], corners[2], color, 2, CV_AA);
 
 	push	0
 	push	16					; 00000010H
@@ -2883,7 +2802,7 @@ _color$ = 12						; size = 4
 	call	?line@cv@@YAXAAVMat@1@V?$Point_@H@1@1ABV?$Scalar_@N@1@HHH@Z ; cv::line
 	add	esp, 36					; 00000024H
 
-; 166  : 		cv::line(img, corners[2], corners[3], color, 2, CV_AA);
+; 165  : 		cv::line(img, corners[2], corners[3], color, 2, CV_AA);
 
 	push	0
 	push	16					; 00000010H
@@ -2909,7 +2828,7 @@ _color$ = 12						; size = 4
 	call	?line@cv@@YAXAAVMat@1@V?$Point_@H@1@1ABV?$Scalar_@N@1@HHH@Z ; cv::line
 	add	esp, 36					; 00000024H
 
-; 167  : 		cv::line(img, corners[3], corners[0], color, 2, CV_AA);
+; 166  : 		cv::line(img, corners[3], corners[0], color, 2, CV_AA);
 
 	push	0
 	push	16					; 00000010H
@@ -2933,7 +2852,7 @@ _color$ = 12						; size = 4
 	call	?line@cv@@YAXAAVMat@1@V?$Point_@H@1@1ABV?$Scalar_@N@1@HHH@Z ; cv::line
 	add	esp, 36					; 00000024H
 
-; 168  : 	};
+; 167  : 	};
 
 	pop	edi
 	pop	esi
@@ -2944,7 +2863,7 @@ _color$ = 12						; size = 4
 	mov	esp, ebp
 	pop	ebp
 	ret	8
-??R<lambda1>@?A0x5b2b9422@@QBEXQAV?$Point_@H@cv@@AAV?$Scalar_@N@3@@Z ENDP ; `anonymous namespace'::<lambda1>::operator()
+??R<lambda0>@?A0x5b2b9422@@QBEXQAV?$Point_@H@cv@@AAV?$Scalar_@N@3@@Z ENDP ; `anonymous namespace'::<lambda0>::operator()
 _TEXT	ENDS
 PUBLIC	??1?$_String_val@DV?$allocator@D@std@@@std@@QAE@XZ ; std::_String_val<char,std::allocator<char> >::~_String_val<char,std::allocator<char> >
 PUBLIC	?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::assign
@@ -2967,7 +2886,7 @@ __ehfuncinfo$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE
 xdata$x	ENDS
 ;	COMDAT ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z
 _TEXT	SEGMENT
-$T160611 = -224						; size = 4
+$T160592 = -224						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
 __Ptr$ = 8						; size = 4
@@ -3000,7 +2919,7 @@ __Ptr$ = 8						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	push	ecx
 	mov	ecx, esp
-	mov	DWORD PTR $T160611[ebp], esp
+	mov	DWORD PTR $T160592[ebp], esp
 	call	??0?$allocator@D@std@@QAE@XZ		; std::allocator<char>::allocator<char>
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	??0?$_String_val@DV?$allocator@D@std@@@std@@QAE@V?$allocator@D@1@@Z ; std::_String_val<char,std::allocator<char> >::_String_val<char,std::allocator<char> >
@@ -3282,7 +3201,7 @@ __Pos$ = 8						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?size@?$vector@PAUSpot@@V?$allocator@PAUSpot@@@std@@@std@@QBEIXZ ; std::vector<Spot *,std::allocator<Spot *> >::size
 	cmp	eax, DWORD PTR __Pos$[ebp]
-	ja	$LN1@operator@2
+	ja	$LN1@operator
 
 ; 931  : 			{	// report error
 ; 932  : 			_DEBUG_ERROR("vector subscript out of range");
@@ -3300,10 +3219,10 @@ __Pos$ = 8						; size = 4
 
 	mov	eax, OFFSET ??_C@_0CE@OFMIGAMM@Standard?5C?$CL?$CL?5Libraries?5Out?5of?5Ra@
 	test	eax, eax
-	je	SHORT $LN4@operator@2
+	je	SHORT $LN4@operator
 	xor	ecx, ecx
-	jne	SHORT $LN5@operator@2
-$LN4@operator@2:
+	jne	SHORT $LN5@operator
+$LN4@operator:
 	mov	esi, esp
 	push	OFFSET ??_C@_1FG@IBPIFFN@?$AA?$CC?$AAS?$AAt?$AAa?$AAn?$AAd?$AAa?$AAr?$AAd?$AA?5?$AAC?$AA?$CL?$AA?$CL?$AA?5?$AAL?$AAi?$AAb?$AAr?$AAa?$AAr?$AAi?$AAe?$AAs?$AA?5?$AAO?$AAu?$AAt?$AA?5?$AAo?$AAf?$AA?5?$AAR@
 	push	0
@@ -3315,9 +3234,9 @@ $LN4@operator@2:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 	cmp	eax, 1
-	jne	SHORT $LN5@operator@2
+	jne	SHORT $LN5@operator
 	int	3
-$LN5@operator@2:
+$LN5@operator:
 	mov	esi, esp
 	push	0
 	push	933					; 000003a5H
@@ -3328,7 +3247,7 @@ $LN5@operator@2:
 	add	esp, 20					; 00000014H
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-$LN1@operator@2:
+$LN1@operator:
 
 ; 934  : 			}
 ; 935  : 
@@ -3482,7 +3401,7 @@ PUBLIC	?copy@?$char_traits@D@std@@SAPADPADPBDI@Z	; std::char_traits<char>::copy
 ; File c:\program files (x86)\microsoft visual studio 10.0\vc\include\xstring
 ;	COMDAT ?_Tidy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEX_NI@Z
 _TEXT	SEGMENT
-__Ptr$143752 = -20					; size = 4
+__Ptr$143740 = -20					; size = 4
 _this$ = -8						; size = 4
 __Built$ = 8						; size = 1
 __Newsize$ = 12						; size = 4
@@ -3525,7 +3444,7 @@ $LN4@Tidy:
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+4]
-	mov	DWORD PTR __Ptr$143752[ebp], ecx
+	mov	DWORD PTR __Ptr$143740[ebp], ecx
 
 ; 1994 : 			if (0 < _Newsize)
 
@@ -3536,7 +3455,7 @@ $LN4@Tidy:
 
 	mov	eax, DWORD PTR __Newsize$[ebp]
 	push	eax
-	mov	ecx, DWORD PTR __Ptr$143752[ebp]
+	mov	ecx, DWORD PTR __Ptr$143740[ebp]
 	push	ecx
 	mov	edx, DWORD PTR _this$[ebp]
 	add	edx, 4
@@ -3551,7 +3470,7 @@ $LN1@Tidy:
 	mov	ecx, DWORD PTR [eax+24]
 	add	ecx, 1
 	push	ecx
-	mov	edx, DWORD PTR __Ptr$143752[ebp]
+	mov	edx, DWORD PTR __Ptr$143740[ebp]
 	push	edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 28					; 0000001cH
@@ -3654,7 +3573,7 @@ __ehfuncinfo$??0?$_String_val@DV?$allocator@D@std@@@std@@QAE@V?$allocator@D@1@@Z
 xdata$x	ENDS
 ;	COMDAT ??0?$_String_val@DV?$allocator@D@std@@@std@@QAE@V?$allocator@D@1@@Z
 _TEXT	SEGMENT
-$T160644 = -240						; size = 8
+$T160625 = -240						; size = 8
 __Alproxy$ = -29					; size = 1
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
@@ -3717,7 +3636,7 @@ __Al$ = 8						; size = 1
 
 ; 470  : 		_Cons_val(_Alproxy, this->_Myproxy, _Container_proxy());
 
-	lea	ecx, DWORD PTR $T160644[ebp]
+	lea	ecx, DWORD PTR $T160625[ebp]
 	call	??0_Container_proxy@std@@QAE@XZ		; std::_Container_proxy::_Container_proxy
 	push	eax
 	mov	eax, DWORD PTR _this$[ebp]
@@ -4425,7 +4344,7 @@ PUBLIC	?move@?$char_traits@D@std@@SAPADPADPBDI@Z	; std::char_traits<char>::move
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?erase@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@II@Z
 _TEXT	SEGMENT
-__Newsize$146501 = -20					; size = 4
+__Newsize$146489 = -20					; size = 4
 _this$ = -8						; size = 4
 __Off$ = 8						; size = 4
 __Count$ = 12						; size = 4
@@ -4508,11 +4427,11 @@ $LN2@erase:
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+20]
 	sub	ecx, DWORD PTR __Count$[ebp]
-	mov	DWORD PTR __Newsize$146501[ebp], ecx
+	mov	DWORD PTR __Newsize$146489[ebp], ecx
 
 ; 1119 : 			_Eos(_Newsize);
 
-	mov	eax, DWORD PTR __Newsize$146501[ebp]
+	mov	eax, DWORD PTR __Newsize$146489[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Eos@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXI@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Eos
@@ -4592,7 +4511,7 @@ PUBLIC	?assign@?$char_traits@D@std@@SAXAADABD@Z	; std::char_traits<char>::assign
 ; File c:\program files (x86)\microsoft visual studio 10.0\vc\include\xstring
 ;	COMDAT ?_Eos@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXI@Z
 _TEXT	SEGMENT
-$T160689 = -209						; size = 1
+$T160670 = -209						; size = 1
 _this$ = -8						; size = 4
 __Newsize$ = 8						; size = 4
 ?_Eos@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXI@Z PROC ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Eos, COMDAT
@@ -4616,11 +4535,11 @@ __Newsize$ = 8						; size = 4
 
 ; 1954 : 		_Traits::assign(_Myptr()[this->_Mysize = _Newsize], _Elem());
 
-	mov	BYTE PTR $T160689[ebp], 0
+	mov	BYTE PTR $T160670[ebp], 0
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR __Newsize$[ebp]
 	mov	DWORD PTR [eax+20], ecx
-	lea	edx, DWORD PTR $T160689[ebp]
+	lea	edx, DWORD PTR $T160670[ebp]
 	push	edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Myptr@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEPADXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Myptr
@@ -5792,6 +5711,46 @@ _this$ = -8						; size = 4
 	pop	ebp
 	ret	0
 ??0?$Rect_@H@cv@@QAE@XZ ENDP				; cv::Rect_<int>::Rect_<int>
+; Function compile flags: /Odtp /RTCsu /ZI
+; File c:\users\tdrol\documents\visual studio 2010\projects\parking\detector\detector.cpp
+_TEXT	ENDS
+;	COMDAT ??$sgn@H@@YAHH@Z
+_TEXT	SEGMENT
+_val$ = 8						; size = 4
+??$sgn@H@@YAHH@Z PROC					; sgn<int>, COMDAT
+
+; 74   : template <typename T> static inline int sgn(T val) {
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 192				; 000000c0H
+	push	ebx
+	push	esi
+	push	edi
+	lea	edi, DWORD PTR [ebp-192]
+	mov	ecx, 48					; 00000030H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+
+; 75   :     return (T(0) < val) - (val < T(0));
+
+	xor	eax, eax
+	cmp	DWORD PTR _val$[ebp], 0
+	setg	al
+	xor	ecx, ecx
+	cmp	DWORD PTR _val$[ebp], 0
+	setl	cl
+	sub	eax, ecx
+
+; 76   : };
+
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??$sgn@H@@YAHH@Z ENDP					; sgn<int>
 _TEXT	ENDS
 PUBLIC	??$_Rechecked@PAIPAI@std@@YAAAPAIAAPAIPAI@Z	; std::_Rechecked<unsigned int *,unsigned int *>
 PUBLIC	??$_Min_element@PAI@std@@YAPAIPAI0@Z		; std::_Min_element<unsigned int *>
@@ -6197,7 +6156,7 @@ __TI2?AVbad_alloc@std@@ DD 00H
 xdata$x	ENDS
 ;	COMDAT ??$_Allocate@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@IPAU10@@Z
 _TEXT	SEGMENT
-$T160765 = -220						; size = 12
+$T160748 = -220						; size = 12
 __Ptr$ = -8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
@@ -6252,10 +6211,10 @@ $LN1@Allocate:
 ; 37   : 		_THROW_NCEE(bad_alloc, 0);
 
 	push	0
-	lea	ecx, DWORD PTR $T160765[ebp]
+	lea	ecx, DWORD PTR $T160748[ebp]
 	call	??0bad_alloc@std@@QAE@PBD@Z		; std::bad_alloc::bad_alloc
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	eax, DWORD PTR $T160765[ebp]
+	lea	eax, DWORD PTR $T160748[ebp]
 	push	eax
 	call	__CxxThrowException@8
 $LN3@Allocate:
@@ -6485,7 +6444,7 @@ $LN1@scalar:
 _TEXT	ENDS
 ;	COMDAT ??$_Allocate@D@std@@YAPADIPAD@Z
 _TEXT	SEGMENT
-$T160774 = -220						; size = 12
+$T160757 = -220						; size = 12
 __Ptr$ = -8						; size = 4
 __Count$ = 8						; size = 4
 ___formal$ = 12						; size = 4
@@ -6539,10 +6498,10 @@ $LN1@Allocate@2:
 ; 37   : 		_THROW_NCEE(bad_alloc, 0);
 
 	push	0
-	lea	ecx, DWORD PTR $T160774[ebp]
+	lea	ecx, DWORD PTR $T160757[ebp]
 	call	??0bad_alloc@std@@QAE@PBD@Z		; std::bad_alloc::bad_alloc
 	push	OFFSET __TI2?AVbad_alloc@std@@
-	lea	eax, DWORD PTR $T160774[ebp]
+	lea	eax, DWORD PTR $T160757[ebp]
 	push	eax
 	call	__CxxThrowException@8
 $LN3@Allocate@2:
@@ -6626,8 +6585,8 @@ xdata$x	ENDS
 ;	COMDAT ?construct@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@2@$$QAU32@@Z
 _TEXT	SEGMENT
 tv74 = -244						; size = 4
-$T160780 = -236						; size = 4
-$T160781 = -224						; size = 4
+$T160763 = -236						; size = 4
+$T160764 = -224						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
 __Ptr$ = 8						; size = 4
@@ -6667,9 +6626,9 @@ __Val$ = 12						; size = 4
 	push	8
 	call	??2@YAPAXIPAX@Z				; operator new
 	add	esp, 8
-	mov	DWORD PTR $T160781[ebp], eax
+	mov	DWORD PTR $T160764[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
-	cmp	DWORD PTR $T160781[ebp], 0
+	cmp	DWORD PTR $T160764[ebp], 0
 	je	SHORT $LN3@construct
 	mov	ecx, DWORD PTR __Val$[ebp]
 	push	ecx
@@ -6677,17 +6636,17 @@ __Val$ = 12						; size = 4
 	add	esp, 4
 	mov	edx, DWORD PTR [eax]
 	mov	eax, DWORD PTR [eax+4]
-	mov	ecx, DWORD PTR $T160781[ebp]
+	mov	ecx, DWORD PTR $T160764[ebp]
 	mov	DWORD PTR [ecx], edx
 	mov	DWORD PTR [ecx+4], eax
-	mov	edx, DWORD PTR $T160781[ebp]
+	mov	edx, DWORD PTR $T160764[ebp]
 	mov	DWORD PTR tv74[ebp], edx
 	jmp	SHORT $LN4@construct
 $LN3@construct:
 	mov	DWORD PTR tv74[ebp], 0
 $LN4@construct:
 	mov	eax, DWORD PTR tv74[ebp]
-	mov	DWORD PTR $T160780[ebp], eax
+	mov	DWORD PTR $T160763[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 
 ; 203  : 		}
@@ -6710,7 +6669,7 @@ text$x	SEGMENT
 __unwindfunclet$?construct@?$allocator@U_Container_proxy@std@@@std@@QAEXPAU_Container_proxy@2@$$QAU32@@Z$0:
 	mov	eax, DWORD PTR __Ptr$[ebp]
 	push	eax
-	mov	ecx, DWORD PTR $T160781[ebp]
+	mov	ecx, DWORD PTR $T160764[ebp]
 	push	ecx
 	call	??3@YAXPAX0@Z				; operator delete
 	add	esp, 8
@@ -6880,7 +6839,7 @@ PUBLIC	??$_Iter_cat@PAI@std@@YA?AUrandom_access_iterator_tag@0@ABQAI@Z ; std::_I
 ; File c:\program files (x86)\microsoft visual studio 10.0\vc\include\xutility
 ;	COMDAT ??$_Debug_range@PAI@std@@YAXPAI0PB_WI@Z
 _TEXT	SEGMENT
-$T160801 = -197						; size = 1
+$T160784 = -197						; size = 1
 __First$ = 8						; size = 4
 __Last$ = 12						; size = 4
 __File$ = 16						; size = 4
@@ -6904,7 +6863,7 @@ __Line$ = 20						; size = 4
 
 	lea	eax, DWORD PTR __First$[ebp]
 	push	eax
-	lea	ecx, DWORD PTR $T160801[ebp]
+	lea	ecx, DWORD PTR $T160784[ebp]
 	push	ecx
 	call	??$_Iter_cat@PAI@std@@YA?AUrandom_access_iterator_tag@0@ABQAI@Z ; std::_Iter_cat<unsigned int *>
 	add	esp, 8
@@ -7242,7 +7201,7 @@ __Ptr$ = 8						; size = 4
 _TEXT	ENDS
 ;	COMDAT ??0?$Matx@N$03$00@cv@@QAE@XZ
 _TEXT	SEGMENT
-_i$154464 = -20						; size = 4
+_i$154453 = -20						; size = 4
 _this$ = -8						; size = 4
 ??0?$Matx@N$03$00@cv@@QAE@XZ PROC			; cv::Matx<double,4,1>::Matx<double,4,1>, COMDAT
 ; _this$ = ecx
@@ -7265,16 +7224,16 @@ _this$ = -8						; size = 4
 
 ; 185  :     for(int i = 0; i < channels; i++) val[i] = _Tp(0);
 
-	mov	DWORD PTR _i$154464[ebp], 0
+	mov	DWORD PTR _i$154453[ebp], 0
 	jmp	SHORT $LN3@Matx
 $LN2@Matx:
-	mov	eax, DWORD PTR _i$154464[ebp]
+	mov	eax, DWORD PTR _i$154453[ebp]
 	add	eax, 1
-	mov	DWORD PTR _i$154464[ebp], eax
+	mov	DWORD PTR _i$154453[ebp], eax
 $LN3@Matx:
-	cmp	DWORD PTR _i$154464[ebp], 4
+	cmp	DWORD PTR _i$154453[ebp], 4
 	jge	SHORT $LN1@Matx
-	mov	eax, DWORD PTR _i$154464[ebp]
+	mov	eax, DWORD PTR _i$154453[ebp]
 	mov	ecx, DWORD PTR _this$[ebp]
 	fldz
 	fstp	QWORD PTR [ecx+eax*8]

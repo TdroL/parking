@@ -71,13 +71,12 @@ void Detector::findFreeSpots(std::vector<Spot *> &spots, double threshold)
 	}
 }
 
+template <typename T> static inline int sgn(T val) {
+    return (T(0) < val) - (val < T(0));
+};
+
 bool Detector::isPointInside(cv::Point const (&corners)[4], unsigned int x, unsigned int y)
 {
-	auto sgn = [] (int a) -> int
-	{
-		return (a > 0) ? 1 : ((a < 0) ? -1 : 0);
-	};
-	
 	// http://local.wasp.uwa.edu.au/~pbourke/geometry/insidepoly/
 	int last_side = 0;
 

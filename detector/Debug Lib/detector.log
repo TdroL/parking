@@ -1,11 +1,11 @@
-﻿Build started 2012-06-09 13:48:42.
-     1>Project "C:\Users\tdrol\documents\visual studio 2010\Projects\parking\detector\detector.vcxproj" on node 2 (build target(s)).
+﻿Build started 2012-06-10 20:27:05.
+     1>Project "C:\Users\tdrol\documents\visual studio 2010\Projects\parking\detector\detector.vcxproj" on node 3 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug Lib\detector.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\Users\tdroL\lib\opencv\build\include\opencv /I"C:\Program Files\boost\boost_1_49_0" /IC:\Users\tdroL\lib\opencv\build\include /ZI /nologo /W3 /WX- /Od /Oy- /D _RUN_TESTS /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug Lib\detector.pch" /FAs /Fa"Debug Lib\\" /Fo"Debug Lib\\" /Fd"Debug Lib\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\Users\tdroL\lib\opencv\build\include\opencv /I"C:\Program Files\boost\boost_1_49_0" /IC:\Users\tdroL\lib\opencv\build\include /ZI /nologo /W3 /WX- /Od /Oy- /D _RUN_TESTS /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug Lib\detector.pch" /FAs /Fa"Debug Lib\\" /Fo"Debug Lib\\" /Fd"Debug Lib\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Detector.cpp
+         Detector.cpp
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\tdrol\documents\visual studio 2010\Projects\parking\Debug Lib\detector.lib" /NOLOGO "Debug Lib\CameraDriver.obj"
          "Debug Lib\CameraFile.obj"
@@ -24,4 +24,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:05.93
+Time Elapsed 00:00:05.80
